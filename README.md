@@ -2,11 +2,11 @@
 
 Work in progress.
 
-- [  ] Atom setup
-- [  ] OSX defaults setup
-- [  ] Terminal setup (oh-my-zsh? custom aliases/functions?)
-- [  ] Basic .vimrc (for commit messages etc.)
-- [  ] Assets (fonts etc.)
+- [ ] Atom setup
+- [ ] OSX defaults setup
+- [ ] Terminal setup (oh-my-zsh? custom aliases/functions?)
+- [ ] Basic .vimrc (for commit messages etc.)
+- [ ] Assets (fonts etc.)
 
 ## Installation
 ```bash
