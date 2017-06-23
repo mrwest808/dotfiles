@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Install packages
+echo "+ Installing Atom packages..."
+apm-beta install --packages-file $DIR/packages.txt
+
+# TODO Create symlinks for config files.

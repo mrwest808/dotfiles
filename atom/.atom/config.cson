@@ -1,0 +1,50 @@
+"*":
+  core:
+    customFileTypes:
+      source: [
+        "[object Object]"
+      ]
+      "source.js": [
+        "jsx"
+      ]
+      text: [
+        "[object Object]"
+      ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
+    titleBar: "hidden"
+  docblockr:
+    auto_add_method_tag: false
+    lower_case_primitives: true
+    short_primitives: true
+  editor:
+    fontFamily: "Input"
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+  emmet: {}
+  "exception-reporting":
+    userId: "896faa42-5a2b-af51-939c-45433d6658e2"
+  "highlight-selected": {}
+  "language-babel":
+    transpileOnSave: false
+  "language-elm":
+    autocompleteEnabled: false
+  "markdown-preview": {}
+  minimap: {}
+  "one-dark-ui": {}
+  "relative-numbers":
+    softWrapsCount: false
+  "tabs-to-spaces": {}
+  tasks: {}
+  "tree-view":
+    hideIgnoredNames: true
+  "vim-mode": {}
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: false
+  welcome:
+    showOnStartup: false
+  whitespace: {}

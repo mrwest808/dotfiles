@@ -1,0 +1,70 @@
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
+# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+
+# Global
+'atom-workspace':
+  'alt-cmd-n': 'tree-view:add-file'
+
+# Generic keybindings
+'atom-text-editor:not([mini])':
+  'cmd-shift-a': 'find-and-replace:select-all'
+  'ctrl-j': 'window:focus-pane-below'
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-k': 'window:focus-pane-above'
+
+# Normal & Visual mode
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'q': 'atom-keyboard-macros-vim:toggle_record_macro_vim'
+  '@': 'atom-keyboard-macros-vim:execute_macro_vim'
+  'Q': 'atom-keyboard-macros:call_last_kbd_macro'
+  ', t f': 'tree-view:reveal-active-file'
+  ', t c': 'tree-view:toggle-focus'
+  ', t o': 'tree-view:toggle'
+  ', l t': 'linter:toggle'
+  ', l n': 'linter:next-error'
+  ', , w': 'lazy-motion:forward'
+  ', , b': 'lazy-motion:backward'
+  'shift-e': 'vim-mode-plus:move-to-last-character-of-line'
+  'shift-b': 'vim-mode-plus:move-to-first-character-of-line'
+  'X': 'pane:close'
+
+# Insert mode only
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'cmd-e': 'emmet:expand-abbreviation'
+
+# Normal mode only
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'g c': 'vim-mode-plus:toggle-line-comments'
+  'g c c': 'editor:toggle-line-comments'
+  'cmd-b': 'pane:close-other-items'
+  'ctrl-d': 'vim-mode-plus-user:scroll-down-five'
+  'ctrl-u': 'vim-mode-plus-user:scroll-up-five'
+  'd s': 'vim-mode-plus:delete-surround'
+  'd shift-S': 'vim-mode-plus:delete-surround-any-pair'
+  'c s': 'vim-mode-plus:change-surround'
+  'c shift-S': 'vim-mode-plus:change-surround-any-pair'
+
+# Visual mode only
+'atom-text-editor.vim-mode-plus.visual-mode':
+  'ctrl-w ctrl-w': 'emmet:wrap-with-abbreviation'
+
+# Tree view key bindings
+'.tree-view':
+  'o': 'tree-view:open-selected-entry'
+  'd': 'tree-view:remove'
+  'f': 'tree-view:add-folder'
+  'r': 'tree-view:show-in-file-manager'
+  'X': 'tree-view:recursive-collapse-directory'
+  'O': 'tree-view:recursive-expand-directory'
+  'p': 'tree-view-user:jump-to-parent-folder'
+  'ctrl-e': 'tree-view-user:scroll-down-one'
+  'ctrl-y': 'tree-view-user:scroll-up-one'
+  'ctrl-d': 'tree-view-user:scroll-down-five'
+  'ctrl-u': 'tree-view-user:scroll-up-five'
+
+# lazy-motion input field only
+'.lazy-motion':
+  'n': 'lazy-motion:forward-cursor-word'
+  'b': 'lazy-motion:backward-cursor-word'

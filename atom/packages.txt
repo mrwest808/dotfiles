@@ -1,0 +1,11 @@
+bracket-padder@0.4.1
+docblockr@0.10.5
+emmet@2.4.3
+ex-mode@0.15.0
+file-icons@2.1.7
+language-babel@2.66.0
+lazy-motion@0.7.0
+relative-numbers@0.8.0
+vim-mode-plus@0.93.0
+vim-mode-plus-keymaps-for-surround@0.2.1
+
