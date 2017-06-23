@@ -7,6 +7,7 @@ Work in progress.
 - [ ] Terminal setup (oh-my-zsh? custom aliases/functions?)
 - [ ] Basic .vimrc (for commit messages etc.)
 - [ ] Assets (fonts etc.)
+- [ ] Node setup (nvm)
 
 ## Installation
 ```bash
