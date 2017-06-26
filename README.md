@@ -8,6 +8,7 @@ Work in progress.
 - [ ] Basic .vimrc (for commit messages etc.)
 - [ ] Assets (fonts etc.)
 - [ ] Node setup (nvm)
+- [ ] Keybindings (OSX, Alfred, SizeUp etc.)
 
 ## Installation
 ```bash
