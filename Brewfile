@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 
+brew 'fish'
 brew 'git'
 brew 'git-flow'
 brew 'yarn', args: ['ignore-dependencies']

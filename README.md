@@ -4,7 +4,8 @@ Work in progress.
 
 - [ ] Atom setup
 - [ ] OSX defaults setup
-- [ ] Terminal setup (oh-my-zsh? custom aliases/functions?)
+- [ ] Fish setup
+  - [ ] Update `pure` theme to not insert newline after <kbd>ctrl</kbd><kbd>+</kbd><kbd>l</kbd>
 - [ ] Basic .vimrc (for commit messages etc.)
 - [ ] Assets (fonts etc.)
 - [ ] Node setup (nvm)

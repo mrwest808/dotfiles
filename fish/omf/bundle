@@ -1,0 +1,4 @@
+package fzf
+package z
+theme default
+theme pure
