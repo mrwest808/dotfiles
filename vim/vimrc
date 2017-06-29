@@ -1,0 +1,69 @@
+set visualbell
+set t_vb=
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-emoji'
+Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vim-easymotion'
+Plug 'myusuf3/numbers.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'dag/vim-fish'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+call plug#end()
+
+set tabstop=2
+set softtabstop=2
+set expandtab
+set shiftwidth=2
+set guioptions-=r
+set guioptions-=L
+set cursorline
+set colorcolumn=80
+set nowrap
+set splitbelow
+set splitright
+set incsearch
+set hlsearch
+
+let mapleader=','
+
+nn <leader><space> :nohlsearch<CR>
+nn <C-j> <C-W>j
+nn <C-k> <C-W>k
+nn <C-l> <C-W>l
+nn <C-h> <C-W>h
+
+nn <leader>q :q<CR>
+nn <leader>!q :q!<CR>
+
+nn <C-d> 5<C-e>
+nn <C-u> 5<C-y>
+
+nn B ^
+nn E $
+
+nn <leader>to :NERDTreeToggle<CR>
+nn <leader>tf :NERDTreeFind<CR>
+nn <leader>tc :NERDTreeCWD<CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.swp$', '\.DS_Store$']
+
+set completefunc=emoji#complete
+
+set lazyredraw
+set ttyfast
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
+autocmd BufEnter * :syn sync maxlines=500 " syntax parsing looks 500 lines forwards
