@@ -1,15 +1,7 @@
 # dotfiles
 
-Work in progress.
-
-- [ ] Atom setup
-- [ ] OSX defaults setup
-- [ ] Fish setup
-  - [ ] Update `pure` theme to not insert newline after <kbd>ctrl</kbd><kbd>+</kbd><kbd>l</kbd>
-- [ ] Basic .vimrc (for commit messages etc.)
-- [ ] Assets (fonts etc.)
-- [ ] Node setup (nvm)
-- [ ] Keybindings (OSX, Alfred, SizeUp etc.)
+- [ ] Finish nvm setup
+- [ ] Add keybindings (system, Alfred, SizeUp etc.)
 
 ## Installation
 ```bash
@@ -27,7 +19,4 @@ cd ~/.dotfiles
 brew bundle
 ```
 
-### Atom
-```bash
-./atom/install
-```
+After that, `cd` into the directories and run the `install` scripts.

@@ -31,6 +31,7 @@ set splitbelow
 set splitright
 set incsearch
 set hlsearch
+set mouse=a
 
 let mapleader=','
 

@@ -54,6 +54,7 @@
 
 # Tree view key bindings
 '.tree-view':
+  ', t o': 'tree-view:toggle'
   'o': 'tree-view:open-selected-entry'
   'd': 'tree-view:remove'
   'f': 'tree-view:add-folder'
