@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Set config values
+echo "+ Setting global Git config values..."
+
+read -p "[Git config] Enter name:" GC_NAME
+read -p "[Git config] Enter email:" GC_EMAIL
+
+git config --global user.name $GC_NAME
+git config --global user.email $GC_EMAIL
+
+# Symlink global gitignore
+echo "+ Symlinking global gitignore file"
+
+ln -sf $DIR/.gitignore_global ~
+
+git config --global core.excludesfile ~/.gitignore_global
+git config --global push.default matching
