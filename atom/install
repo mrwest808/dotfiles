@@ -5,6 +5,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install packages
 echo "+ Installing Atom packages..."
-apm-beta install --packages-file $DIR/packages.txt
+apm install --packages-file $DIR/packages.txt
 
-# TODO Create symlinks for config files.
+# Symlink config files
+echo "+ Symlinking Atom config files"
+for f in $DIR/.atom/*
+do
+  ln -sf $f ~/.atom
+done

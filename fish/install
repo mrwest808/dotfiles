@@ -1,9 +1,15 @@
 #!/bin/bash
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE=[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Install oh-my-fish
+echo "+ Installing fish..."
 curl -L https://get.oh-my.fish | fish
 
-# TODO Symlink config files (or copy, had some issues when trying symlinks)
+# Symlink config files
+echo "+ Symlinking fish config files"
+for f in $DIR/omf/*
+do
+  ln -sf $f $OMF_CONFIG
+done
