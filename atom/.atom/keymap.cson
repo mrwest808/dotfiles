@@ -5,6 +5,8 @@
 # Global
 'atom-workspace':
   'alt-cmd-n': 'tree-view:add-file'
+  'shift-cmd-t f': 'tree-view:toggle-focus'
+  'shift-cmd-t g': 'github:toggle-git-tab-focus'
 
 # Generic keybindings
 'atom-text-editor:not([mini])':
@@ -68,3 +70,19 @@
 '.lazy-motion':
   'n': 'lazy-motion:forward-cursor-word'
   'b': 'lazy-motion:backward-cursor-word'
+
+# Git/Github panel
+'.github-Panel':
+  'shift-cmd-t g': 'github:toggle-git-tab'
+
+'.github-StagingView':
+  'h': 'core:move-left'
+  's': 'core:confirm'
+  'j': 'core:move-down'
+  'k': 'core:move-up'
+
+'.github-FilePatchView':
+  'j': 'github:select-next-hunk'
+  'k': 'github:select-previous-hunk'
+  's': 'core:confirm'
+  'l': 'core:move-right'
