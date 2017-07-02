@@ -17,9 +17,11 @@
     ]
     titleBar: "hidden"
   docblockr:
+    align_tags: "no"
     auto_add_method_tag: false
     lower_case_primitives: true
     short_primitives: true
+    spacer_between_sections: "after_description"
   editor:
     fontFamily: "Input"
     invisibles: {}
@@ -42,6 +44,7 @@
   tasks: {}
   "tree-view":
     hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
     useClipboardAsDefaultRegister: false
