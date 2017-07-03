@@ -1,5 +1,6 @@
 # dotfiles
 
+- [ ] Decide on whether to use ZSH or Fish shell
 - [ ] Finish nvm setup
 - [ ] Add keybindings (system, Alfred, SizeUp etc.)
 

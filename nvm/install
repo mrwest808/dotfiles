@@ -3,4 +3,5 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+mkdir ~/.nvm
 # TODO nvm doesn't seem to support fish, look at installation alternatives

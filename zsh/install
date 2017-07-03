@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Install oh-my-zsh
+echo "+ Installing oh-my-zsh..."
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+
+# Symlink zshrc
+echo "+ Symlinking .zshrc"
+ln -sf $DIR/zshrc ~/.zshrc

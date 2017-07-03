@@ -3,6 +3,7 @@
 alias x=exit
 alias vi=vim
 alias l="ls -la"
+alias ...="cd ../.."
 
 
 # Git
