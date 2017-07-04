@@ -34,6 +34,8 @@ set splitright
 set incsearch
 set hlsearch
 set mouse=a
+set number
+set relativenumber
 
 let mapleader=','
 
