@@ -12,8 +12,8 @@
       ]
     telemetryConsent: "limited"
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "one-dark-ui"
+      "oceanic-next"
     ]
     titleBar: "hidden"
   docblockr:

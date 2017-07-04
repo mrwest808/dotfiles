@@ -18,6 +18,7 @@ getPackageModule = (packageName) ->
 disposable = atom.packages.onDidActivateInitialPackages () ->
   configureTreeView(getPackageModule('tree-view'))
   configureVimModePlus(getPackageService('vim-mode-plus', 'provideVimModePlus'))
+  configureTheming()
 
   disposable.dispose()
 
@@ -112,3 +113,13 @@ configureVimModePlus = ({ Base }) ->
 
   ScrollDownFive.registerCommand()
   ScrollUpFive.registerCommand()
+
+###*
+ * theme extensions
+###
+configureTheming = () ->
+  atom.commands.add 'atom-workspace', 'themes:toggle-dark', () ->
+    atom.config.set('core.themes', ['one-dark-ui', 'oceanic-next'])
+
+  atom.commands.add 'atom-workspace', 'themes:toggle-light', () ->
+    atom.config.set('core.themes', ['one-light-ui', 'one-light-syntax'])
