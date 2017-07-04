@@ -1,8 +1,5 @@
 # dotfiles
 
-- [ ] Finish nvm setup
-- [ ] Add keybindings (system, Alfred, SizeUp etc.)
-
 ## Installation
 
 ```bash
