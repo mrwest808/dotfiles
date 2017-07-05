@@ -67,6 +67,7 @@
   'ctrl-d': 'tree-view-user:scroll-down-five'
   'ctrl-u': 'tree-view-user:scroll-up-five'
   'c': 'tree-view:copy-project-path'
+  'escape': 'tool-panel:unfocus'
 
 # lazy-motion input field only
 '.lazy-motion':
