@@ -12,8 +12,46 @@
 #     'body': 'console.log $1'
 
 '.source.js':
+  'export default':
+    'prefix': 'ed'
+    'leftLabel': 'snippet'
+    'body': 'export default $1'
+
+  'import':
+    'prefix': 'imp'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'import [package] from [path]'
+    'body': 'import $1 from \'$2\'$3'
+
+  'react: import':
+    'prefix': 'rimp'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'import React from \'react\''
+    'body': 'import React from \'react\'$1'
+    # import React${1:, \{ ${2:PropTypes} \\}} from 'react'$3
+
+  'react: import w/ proptypes':
+    'prefix': 'rimpp'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'import React, { PropTypes } from \'react\''
+    'body': 'import React, { ${2:PropTypes} } from \'react\'$1'
+
+  'react: create class':
+    'prefix': 'rcc'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'class [Name] extends Component { ... }'
+    'body': '''
+      class $1 extends Component {
+        render() {
+          return $2
+        }
+      }
+    '''
+
   'describe (mocha)':
     'prefix': 'describe'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'describe([section], () => { ... })'
     'body': '''
       describe('$1', () => {
         ${2:// ..}
@@ -22,6 +60,8 @@
 
   'it (mocha)':
     'prefix': 'it'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'it([should], () => { ... })'
     'body': '''
       it('$1', ($2) => {
         ${3:// ..}
