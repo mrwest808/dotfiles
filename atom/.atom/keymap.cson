@@ -28,6 +28,7 @@
   ', l n': 'linter:next-error'
   ', , w': 'lazy-motion:forward'
   ', , b': 'lazy-motion:backward'
+  ', space': 'vim-mode-plus:reset-normal-mode'
   'shift-e': 'vim-mode-plus:move-to-last-character-of-line'
   'shift-b': 'vim-mode-plus:move-to-first-character-of-line'
   'X': 'pane:close'

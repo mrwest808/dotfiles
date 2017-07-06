@@ -7,6 +7,9 @@
       "source.js": [
         "jsx"
       ]
+      "source.js.jsx": [
+        "jsx"
+      ]
       text: [
         "[object Object]"
       ]
@@ -35,6 +38,14 @@
     transpileOnSave: false
   "language-elm":
     autocompleteEnabled: false
+  linter:
+    lintOnChange: false
+  "linter-eslint": {}
+  "linter-sass-lint":
+    resolvePathsRelativeToConfig: true
+  "linter-ui-default":
+    panelHeight: 69
+    showPanel: true
   "markdown-preview": {}
   minimap: {}
   "one-dark-ui": {}
@@ -47,6 +58,7 @@
     hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
+    ignoreCaseForSearch: true
     useClipboardAsDefaultRegister: false
   welcome:
     showOnStartup: false
