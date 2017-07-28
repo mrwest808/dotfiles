@@ -17,6 +17,36 @@
     'leftLabel': 'snippet'
     'body': 'export default $1'
 
+  'function':
+    'prefix': 'fn'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'function [name]([...args]) {...}'
+    'body': '''
+      function $1($2) {
+        $3
+      }
+    '''
+
+  'console.log()':
+    'prefix': 'log'
+    'leftLabel': 'snippet'
+    'body': 'console.log($1)'
+
+  'console.info()':
+    'prefix': 'info'
+    'leftLabel': 'snippet'
+    'body': 'console.info($1)'
+
+  'console.warn()':
+    'prefix': 'warn'
+    'leftLabel': 'snippet'
+    'body': 'console.warn($1)'
+
+  'console.error()':
+    'prefix': 'err'
+    'leftLabel': 'snippet'
+    'body': 'console.error($1)'
+
   'import':
     'prefix': 'imp'
     'leftLabel': 'snippet'
@@ -24,17 +54,16 @@
     'body': 'import $1 from \'$2\'$3'
 
   'react: import':
-    'prefix': 'rimp'
+    'prefix': 'impr'
     'leftLabel': 'snippet'
     'rightLabelHTML': 'import React from \'react\''
-    'body': 'import React from \'react\'$1'
-    # import React${1:, \{ ${2:PropTypes} \\}} from 'react'$3
+    'body': 'import React$1 from \'react\'$2'
 
-  'react: import w/ proptypes':
-    'prefix': 'rimpp'
+  'react: import proptypes':
+    'prefix': 'imprp'
     'leftLabel': 'snippet'
-    'rightLabelHTML': 'import React, { PropTypes } from \'react\''
-    'body': 'import React, { ${2:PropTypes} } from \'react\'$1'
+    'rightLabelHTML': 'import PropTypes from \'prop-types\''
+    'body': 'import PropTypes$1 from \'prop-types\'$2'
 
   'react: create class':
     'prefix': 'rcc'
@@ -55,7 +84,7 @@
     'body': '''
       describe('$1', () => {
         ${2:// ..}
-      });$3
+      })$3
     '''
 
   'it (mocha)':
@@ -65,10 +94,23 @@
     'body': '''
       it('$1', ($2) => {
         ${3:// ..}
-      });$4
+      })$4
     '''
 
 '.source.gfm':
   'Todo item':
     'prefix': 'td'
     'body': '- [ ] $1'
+
+'.source.css.scss':
+  'import':
+    'prefix': 'import'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': '@import \'[path]\''
+    'body': '@import \'$1\';$2'
+
+  'charset':
+      'prefix': 'charset'
+      'leftLabel': 'snippet'
+      'rightLabelHTML': '@charset \'[encoding]\''
+      'body': '@charset \'${1:UTF-8}\';$2'

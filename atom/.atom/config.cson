@@ -1,4 +1,13 @@
 "*":
+  "atom-ternjs":
+    snippetsFirst: true
+    useSnippets: true
+  "autocomplete-js-import":
+    fuzzy: {}
+    removeExtensions: [
+      ".js"
+      ".jsx"
+    ]
   core:
     customFileTypes:
       source: [
@@ -13,6 +22,10 @@
       text: [
         "[object Object]"
       ]
+    disabledPackages: [
+      "language-gfm"
+      "atom-ternjs"
+    ]
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
@@ -33,6 +46,7 @@
   emmet: {}
   "exception-reporting":
     userId: "896faa42-5a2b-af51-939c-45433d6658e2"
+  "fuzzy-finder": {}
   "highlight-selected": {}
   "language-babel":
     transpileOnSave: false
@@ -42,13 +56,16 @@
     lintOnChange: false
   "linter-eslint": {}
   "linter-sass-lint":
+    noConfigDisable: true
     resolvePathsRelativeToConfig: true
   "linter-ui-default":
-    panelHeight: 69
-    showPanel: true
-  "markdown-preview": {}
+    panelHeight: 99
+  "markdown-preview":
+    openPreviewInSplitPane: false
   minimap: {}
   "one-dark-ui": {}
+  pigments:
+    markerType: "native-dot"
   "relative-numbers":
     softWrapsCount: false
   "tabs-to-spaces": {}
@@ -58,6 +75,11 @@
     hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "("
+      "{"
+      "["
+    ]
     ignoreCaseForSearch: true
     useClipboardAsDefaultRegister: false
   welcome:
