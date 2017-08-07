@@ -103,14 +103,53 @@
     'body': '- [ ] $1'
 
 '.source.css.scss':
-  'import':
+  'comment':
+    'prefix': 'comment'
+    'leftLabel': 'snippet'
+    'body': '''
+      // ----------------------------------
+      // ${1:...}
+      // ----------------------------------
+    '''
+
+  '@import':
     'prefix': 'import'
     'leftLabel': 'snippet'
     'rightLabelHTML': '@import \'[path]\''
     'body': '@import \'$1\';$2'
 
-  'charset':
+  '@charset':
       'prefix': 'charset'
       'leftLabel': 'snippet'
       'rightLabelHTML': '@charset \'[encoding]\''
       'body': '@charset \'${1:UTF-8}\';$2'
+
+  '@return':
+    'prefix': 'return'
+    'leftLabel': 'snippet'
+    'body': '@return $1;'
+
+  '@else':
+    'prefix': 'else'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': '@else { ... }'
+    'body': '''
+      @else {
+        $1
+      }
+    '''
+
+  '@else if':
+    'prefix': 'elif'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': '@else if [conditions] { ... }'
+    'body': '''
+      @else if ${1:conditions} {
+        $2
+      }
+    '''
+
+  '@debug':
+    'prefix': 'debug'
+    'leftLabel': 'snippet'
+    'body': '@debug $1;'

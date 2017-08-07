@@ -1,4 +1,8 @@
 "*":
+  "activate-power-mode":
+    plugins:
+      playAudio: true
+      screenShake: true
   "atom-ternjs":
     snippetsFirst: true
     useSnippets: true
@@ -59,7 +63,8 @@
     noConfigDisable: true
     resolvePathsRelativeToConfig: true
   "linter-ui-default":
-    panelHeight: 99
+    panelHeight: 69
+    showPanel: true
   "markdown-preview":
     openPreviewInSplitPane: false
   minimap: {}
@@ -72,7 +77,6 @@
   tasks: {}
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
   "vim-mode": {}
   "vim-mode-plus":
     charactersToAddSpaceOnSurround: [

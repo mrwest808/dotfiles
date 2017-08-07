@@ -36,6 +36,7 @@
 # Insert mode only
 'atom-text-editor.vim-mode-plus.insert-mode':
   'cmd-e': 'emmet:expand-abbreviation'
+  'j k': 'vim-mode-plus:activate-normal-mode'
 
 # Normal mode only
 'atom-text-editor.vim-mode-plus.normal-mode':
