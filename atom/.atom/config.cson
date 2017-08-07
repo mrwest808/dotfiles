@@ -71,6 +71,11 @@
   "one-dark-ui": {}
   pigments:
     markerType: "native-dot"
+  "prettier-atom":
+    prettierOptions:
+      semi: false
+      singleQuote: true
+      trailingComma: "all"
   "relative-numbers":
     softWrapsCount: false
   "tabs-to-spaces": {}
