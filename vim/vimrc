@@ -17,6 +17,8 @@ Plug 'myusuf3/numbers.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'dag/vim-fish'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'othree/yajs.vim'
+Plug 'mrwest808/vim-colors-paper'
 
 call plug#end()
 
@@ -36,6 +38,10 @@ set hlsearch
 set mouse=a
 set number
 set relativenumber
+
+set t_Co=256
+colorscheme paper
+set background=light
 
 let mapleader=','
 
