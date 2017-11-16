@@ -16,8 +16,9 @@ getPackageModule = (packageName) ->
 # ----------------------------------------------------------------------------
 
 disposable = atom.packages.onDidActivateInitialPackages () ->
+  require './vim-mode-plus'
+
   configureTreeView(getPackageModule('tree-view'))
-  configureVimModePlus(getPackageService('vim-mode-plus', 'provideVimModePlus'))
   configureTheming()
 
   disposable.dispose()
@@ -89,30 +90,6 @@ configureTreeView = ({ treeView }) ->
     scrollTreeView(5, 'down')
   atom.commands.add scope, "#{prefix}:scroll-up-five", () ->
     scrollTreeView(5, 'up')
-
-###*
- * vim-mode-plus extensions
-###
-configureVimModePlus = ({ Base }) ->
-  prefix = 'vim-mode-plus-user'
-
-  ScrollDown = Base.getClass('ScrollDown')
-  ScrollUp = Base.getClass('ScrollUp')
-
-  class ScrollDownFive extends ScrollDown
-    @commandPrefix: prefix
-    @extend()
-
-    getCount: -> 5
-
-  class ScrollUpFive extends ScrollUp
-    @commandPrefix: prefix
-    @extend()
-
-    getCount: -> 5
-
-  ScrollDownFive.registerCommand()
-  ScrollUpFive.registerCommand()
 
 ###*
  * theme extensions

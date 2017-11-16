@@ -72,6 +72,8 @@
   pigments:
     markerType: "native-dot"
   "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
     prettierOptions:
       semi: false
       singleQuote: true
