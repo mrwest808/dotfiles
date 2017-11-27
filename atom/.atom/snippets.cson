@@ -153,3 +153,8 @@
     'prefix': 'debug'
     'leftLabel': 'snippet'
     'body': '@debug $1;'
+
+'*':
+  'ascii - strut':
+    'prefix': 'asciistrut'
+    'body': 'ᕕ( ᐛ )ᕗ'

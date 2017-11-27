@@ -1,80 +1,153 @@
-set shell=/bin/bash
-
-set visualbell
-set t_vb=
+set t_vb= " Disable visual bell
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-emoji'
-Plug 'scrooloose/nerdtree'
-Plug 'easymotion/vim-easymotion'
-Plug 'myusuf3/numbers.vim'
+Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'dag/vim-fish'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'othree/yajs.vim'
-Plug 'mrwest808/vim-colors-paper'
+Plug 'scrooloose/nerdtree'
 
 call plug#end()
 
-set tabstop=2
-set softtabstop=2
-set expandtab
-set shiftwidth=2
-set guioptions-=r
-set guioptions-=L
-set cursorline
-set colorcolumn=80
-set nowrap
-set splitbelow
-set splitright
-set incsearch
-set hlsearch
-set mouse=a
-set number
-set relativenumber
+set number                     " Precede each line with its line number
+set relativenumber             " Show line numbers relative to cursor line
+set autoindent                 " Copy indent from current line when starting a new line
+set smartindent                " Do smart autoindenting when starting a new line
+set lazyredraw                 " Screen will not be redrawn while executing macros, registers & other commands that have not been typed
+set laststatus=2               " Last window will always have a status line
+set showcmd                    " Show (partial) command in the last line of the screen (turn off if slow)
+set backspace=indent,eol,start " Normal backspace behavior
+set timeoutlen=500             " Time waited for a mapped sequence to complete (default: 1000)
+set whichwrap=b,s              " Backspace/space can move left/right to previous/next line from the first/last character
+set shortmess=aIT              " Avoid all hit-enter prompts caused by file messages
+set hlsearch                   " Highlight all search term matches
+set incsearch                  " Show partial match highlight while typing
+set ignorecase smartcase       " Ignore case in search pattern
+set wildmenu                   " CLI completion operates in enhanced mode
+set wildmode=full
+set tabstop=2                  " A <Tab> counts for 2 spaces
+set shiftwidth=2               " Number of spaces to use for each step of (auto)indent
+set expandtab smarttab         " Use spaces for <Tab>
+set scrolloff=1                " Number of screen lines to always keep above/below cursor
+set nolist                     " Don't render whitespace characters
+set nojoinspaces
+set autoread
+set foldlevelstart=99
+set nocursorline
+set synmaxcol=1000
+set ttyfast                    " Faster redrawing
 
+if has('termguicolors')
+  set termguicolors
+endif
+
+syntax on
 set t_Co=256
-colorscheme paper
-set background=light
+colorscheme gruvbox
+set background=dark
 
 let mapleader=','
 
-nn <leader><space> :nohlsearch<CR>
-nn <C-j> <C-W>j
-nn <C-k> <C-W>k
-nn <C-l> <C-W>l
-nn <C-h> <C-W>h
+nmap <C-u> 5<C-y>
+nmap <C-d> 5<C-e>
 
-nn <leader>q :q<CR>
-nn <leader>!q :q!<CR>
-
-nn <C-d> 5<C-e>
-nn <C-u> 5<C-y>
-
-nn B ^
-nn E $
-
-nn <leader>to :NERDTreeToggle<CR>
-nn <leader>tf :NERDTreeFind<CR>
-nn <leader>tc :NERDTreeCWD<CR>
-
-xmap ga <Plug>(EasyAlign)
+nmap <leader><space> :nohlsearch<CR>
 nmap ga <Plug>(EasyAlign)
 
+command! SourceVim :source ~/.vimrc
+command! SourceNvim :source ~/.config/nvim/init.vim
+
+" Open NERDTree when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" Close vim if the only window left open is a NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Show hidden files in NERDTree
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.swp$', '\.DS_Store$']
 
-set completefunc=emoji#complete
+" NERDTree commands
+nmap <leader>to :NERDTreeToggle<CR>
+nmap <leader>tf :NERDTreeFind<CR>
+nmap <leader>tc :NERDTreeCWD<CR>
 
-set lazyredraw
-set ttyfast
-set nocursorcolumn
-set nocursorline
-syntax sync minlines=256
-autocmd BufEnter * :syn sync maxlines=500 " syntax parsing looks 500 lines forwards
+" set t_vb=
+
+" call plug#begin('~/.vim/plugged')
+
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-surround'
+" Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-emoji'
+" Plug 'scrooloose/nerdtree'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'myusuf3/numbers.vim'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'dag/vim-fish'
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'othree/yajs.vim'
+" Plug 'mrwest808/vim-colors-paper'
+
+" call plug#end()
+
+" set tabstop=2
+" set softtabstop=2
+" set expandtab
+" set shiftwidth=2
+" set guioptions-=r
+" set guioptions-=L
+" set cursorline
+" set colorcolumn=80
+" set nowrap
+" set splitbelow
+" set splitright
+" set incsearch
+" set hlsearch
+" set mouse=a
+" set number
+" set relativenumber
+" set nofoldenable
+
+" set t_Co=256
+" colorscheme paper
+" set background=light
+
+" let mapleader=','
+
+" nn <leader><space> :nohlsearch<CR>
+" nn <C-j> <C-W>j
+" nn <C-k> <C-W>k
+" nn <C-l> <C-W>l
+" nn <C-h> <C-W>h
+
+" nn <leader>q :q<CR>
+" nn <leader>!q :q!<CR>
+
+" nn <C-d> 5<C-e>
+" nn <C-u> 5<C-y>
+
+" nn B ^
+" nn E $
+
+" nn <leader>to :NERDTreeToggle<CR>
+" nn <leader>tf :NERDTreeFind<CR>
+" nn <leader>tc :NERDTreeCWD<CR>
+
+" xmap ga <Plug>(EasyAlign)
+" nmap ga <Plug>(EasyAlign)
+
+" let NERDTreeShowHidden=1
+" let NERDTreeIgnore = ['\.swp$', '\.DS_Store$']
+
+" set completefunc=emoji#complete
+
+" set lazyredraw
+" set ttyfast
+" set nocursorcolumn
+" set nocursorline
+" syntax sync minlines=256
+" autocmd BufEnter * :syn sync maxlines=500 " syntax parsing looks 500 lines forwards

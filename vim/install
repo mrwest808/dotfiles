@@ -11,3 +11,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Symlink vimrc
 echo "+ Symlinking .vimrc"
 ln -sf $DIR/vimrc ~/.vimrc
+
+# Symlink nvim config
+echo "+ Symlink nvim config"
+mkdir -p ~/.config/nvim/autoload
+ln -sf $DIR/vimrc ~/.config/nvim/init.vim
+ln -sf ~/.vim/autoload/plug.vim ~/.config/nvim/autoload/
