@@ -8,6 +8,7 @@
       formatOnType: false
     "atom-ide-diagnostics-ui":
       autoVisibility: true
+    use: {}
   "atom-ternjs":
     snippetsFirst: true
     useSnippets: true
