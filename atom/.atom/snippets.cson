@@ -65,6 +65,12 @@
     'rightLabelHTML': 'import PropTypes from \'prop-types\''
     'body': 'import PropTypes$1 from \'prop-types\'$2'
 
+  'react: import Glamor.createElement':
+    'prefix': 'imprg'
+    'leftLabel': 'snippet'
+    'rightLabelHTML': 'import { createElement } from \'glamor/react\''
+    'body': 'import { createElement } from \'glamor/react\''
+
   'react: create class':
     'prefix': 'rcc'
     'leftLabel': 'snippet'

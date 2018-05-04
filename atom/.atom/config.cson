@@ -3,6 +3,11 @@
     plugins:
       playAudio: true
       screenShake: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnType: false
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
   "atom-ternjs":
     snippetsFirst: true
     useSnippets: true
@@ -29,6 +34,11 @@
     disabledPackages: [
       "language-gfm"
       "atom-ternjs"
+      "activate-power-mode"
+      "pigments"
+      "linter"
+      "linter-ui-default"
+      "teletype"
     ]
     telemetryConsent: "limited"
     themes: [
@@ -53,6 +63,9 @@
   "fuzzy-finder": {}
   "highlight-selected": {}
   "language-babel":
+    taggedTemplateGrammar: [
+      "\"(?<=<style jsx>{)|(?<=<style jsx global>{)\":source.css.styled"
+    ]
     transpileOnSave: false
   "language-elm":
     autocompleteEnabled: false
@@ -64,7 +77,6 @@
     resolvePathsRelativeToConfig: true
   "linter-ui-default":
     panelHeight: 69
-    showPanel: true
   "markdown-preview":
     openPreviewInSplitPane: false
   minimap: {}
@@ -72,10 +84,15 @@
   pigments:
     markerType: "native-dot"
   "prettier-atom":
-    formatOnSaveOptions: {}
+    formatOnSaveOptions:
+      enabled: true
+      excludedGlobs: [
+        "package.json"
+      ]
     prettierOptions:
       singleQuote: true
-      trailingComma: "all"
+      trailingComma: "es5"
+    useEslint: true
   "relative-numbers":
     softWrapsCount: false
   "tabs-to-spaces": {}
