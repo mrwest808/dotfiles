@@ -7,6 +7,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
+Plug 'elzr/vim-json'
 
 call plug#end()
 
