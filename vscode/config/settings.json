@@ -1,10 +1,12 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "editor.fontFamily": "Input, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "Input, Menlo, Monaco, monospace",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -21,7 +23,9 @@
   "vim.leader": ",",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-u>"],
+      "before": [
+        "<C-u>"
+      ],
       "after": [],
       "commands": [
         {
@@ -33,15 +37,29 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-u>"],
-      "after": ["5", "<C-y>"]
+      "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "5",
+        "<C-y>"
+      ]
     },
     {
-      "before": ["<C-d>"],
-      "after": ["5", "<C-e>"]
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "5",
+        "<C-e>"
+      ]
     },
     {
-      "before": ["leader", "t", "f"],
+      "before": [
+        "leader",
+        "t",
+        "f"
+      ],
       "after": [],
       "commands": [
         {
@@ -51,7 +69,11 @@
       ]
     },
     {
-      "before": ["leader", "t", "o"],
+      "before": [
+        "leader",
+        "t",
+        "o"
+      ],
       "after": [],
       "commands": [
         {
