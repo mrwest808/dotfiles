@@ -1,0 +1,71 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontFamily": "Input, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "prettier.trailingComma": "es5",
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "typescript.npm": "/usr/local/bin/npm",
+  "workbench.colorTheme": "Oceanic Next Italic",
+  "vim.easymotion": true,
+  "vim.leader": ",",
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-u>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "deleteAllLeft",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-u>"],
+      "after": ["5", "<C-y>"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["5", "<C-e>"]
+    },
+    {
+      "before": ["leader", "t", "f"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusSideBar",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["leader", "t", "o"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "window.zoomLevel": 0,
+  "materialTheme.fixIconsRunning": false,
+  "editor.snippetSuggestions": "top",
+  "files.associations": {
+    "*.twig": "php"
+  }
+}

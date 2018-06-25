@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# # Install packages
+# echo "+ Installing VSCode packages..."
+# cat $DIR/packages.txt | xargs -L 1 echo code --install-extension
+
+# Symlink config files
+echo "+ Symlinking VSCode config files"
+for f in $DIR/config/*
+do
+  ln -sf $f ~/Library/Application\ Support/Code/User
+done
+
+# Symlink snippets
+echo "+ Symlinking VSCode snippets"
+mkdir -p ~/Library/Application\ Support/Code/User/snippets
+for f in $DIR/snippets/*
+do
+  ln -sf $f ~/Library/Application\ Support/Code/User/snippets
+done

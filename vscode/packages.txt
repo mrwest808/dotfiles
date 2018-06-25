@@ -1,0 +1,9 @@
+SintrumIT.theme-oceanic-next-italic
+esbenp.prettier-vscode
+jpoissonnier.vscode-styled-components
+ricard.postcss
+sandy081.todotasks
+sdras.night-owl
+Tyriar.lorem-ipsum
+viablelab.bracket-padder
+vscodevim.vim
