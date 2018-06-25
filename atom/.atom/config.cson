@@ -6,8 +6,7 @@
   "atom-ide-ui":
     "atom-ide-code-format":
       formatOnType: false
-    "atom-ide-diagnostics-ui":
-      autoVisibility: true
+    "atom-ide-diagnostics-ui": {}
     use: {}
   "atom-ternjs":
     snippetsFirst: true
@@ -39,6 +38,7 @@
       "pigments"
       "linter"
       "linter-ui-default"
+      "ide-typescript"
       "teletype"
     ]
     telemetryConsent: "limited"

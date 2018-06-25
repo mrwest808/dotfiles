@@ -91,3 +91,7 @@
   'k': 'github:select-previous-hunk'
   's': 'core:confirm'
   'l': 'core:move-right'
+
+# Atom IDE
+'.platform-darwin, .platform-linux, .platform-win32':
+  'shift-cmd-t d': 'diagnostics:toggle-table'
