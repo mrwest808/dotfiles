@@ -12,7 +12,6 @@ brew 'yarn', args: ['ignore-dependencies']
 brew 'z'
 
 cask 'alfred'
-cask 'atom'
 cask 'firefox'
 cask 'google-chrome'
 cask 'insomnia'
@@ -21,3 +20,4 @@ cask 'lacona'
 cask 'sizeup'
 cask 'slack'
 cask 'spotify'
+cask 'visual-studio-code'

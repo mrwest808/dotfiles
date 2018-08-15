@@ -8,6 +8,7 @@ Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 

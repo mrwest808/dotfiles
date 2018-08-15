@@ -17,6 +17,7 @@
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
+  "prettier.eslintIntegration": true,
   "typescript.npm": "/usr/local/bin/npm",
   "workbench.colorTheme": "Oceanic Next Italic",
   "vim.easymotion": true,
@@ -89,5 +90,9 @@
   "editor.snippetSuggestions": "top",
   "files.associations": {
     "*.twig": "php"
-  }
+  },
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "typescript.autoImportSuggestions.enabled": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "extensions.ignoreRecommendations": false
 }
