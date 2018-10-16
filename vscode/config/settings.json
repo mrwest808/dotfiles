@@ -3,13 +3,12 @@
   "editor.fontFamily": "Input, Menlo, Monaco, monospace",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
-  "editor.lineNumbers": "relative",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.tabSize": 2,
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "mdx": "javascriptreact",
+    "svelte": "html"
   },
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
@@ -24,9 +23,7 @@
   "vim.leader": ",",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-u>"
-      ],
+      "before": ["<C-u>"],
       "after": [],
       "commands": [
         {
@@ -38,29 +35,15 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<C-u>"
-      ],
-      "after": [
-        "5",
-        "<C-y>"
-      ]
+      "before": ["<C-u>"],
+      "after": ["5", "<C-y>"]
     },
     {
-      "before": [
-        "<C-d>"
-      ],
-      "after": [
-        "5",
-        "<C-e>"
-      ]
+      "before": ["<C-d>"],
+      "after": ["5", "<C-e>"]
     },
     {
-      "before": [
-        "leader",
-        "t",
-        "f"
-      ],
+      "before": ["leader", "t", "f"],
       "after": [],
       "commands": [
         {
@@ -70,11 +53,7 @@
       ]
     },
     {
-      "before": [
-        "leader",
-        "t",
-        "o"
-      ],
+      "before": ["leader", "t", "o"],
       "after": [],
       "commands": [
         {
@@ -89,10 +68,27 @@
   "materialTheme.fixIconsRunning": false,
   "editor.snippetSuggestions": "top",
   "files.associations": {
-    "*.twig": "php"
+    "*.twig": "php",
+    "*.mdx": "mdx",
+    ".stylelintrc": "json"
   },
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "typescript.autoImportSuggestions.enabled": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
-  "extensions.ignoreRecommendations": false
+  "extensions.ignoreRecommendations": false,
+  "files.insertFinalNewline": true,
+  "[c]": {
+    "editor.formatOnSave": false
+  },
+  "[svelte]": {
+    "editor.formatOnSave": false
+  },
+  "[java]": {
+    "editor.formatOnSave": false
+  },
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "editor.lineNumbers": "relative",
+  "breadcrumbs.enabled": true
 }

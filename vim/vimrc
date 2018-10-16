@@ -3,6 +3,7 @@ set t_vb= " Disable visual bell
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
@@ -74,6 +75,9 @@ let NERDTreeShowHidden=1
 nmap <leader>to :NERDTreeToggle<CR>
 nmap <leader>tf :NERDTreeFind<CR>
 nmap <leader>tc :NERDTreeCWD<CR>
+
+" CTRL P ignores
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " set t_vb=
 

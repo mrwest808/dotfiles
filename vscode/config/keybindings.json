@@ -248,5 +248,14 @@
   {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "-workbench.action.terminal.openNativeConsole",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "extension.calculateReplace"
   }
 ]
