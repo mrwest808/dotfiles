@@ -7,9 +7,12 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
-Plug 'ctrlpvim/ctrlp.vim'
+
+if !exists("g:gui_oni")
+    Plug 'scrooloose/nerdtree'
+    Plug 'ctrlpvim/ctrlp.vim'
+endif
 
 call plug#end()
 
@@ -45,11 +48,6 @@ if has('termguicolors')
   set termguicolors
 endif
 
-syntax on
-set t_Co=256
-colorscheme gruvbox
-set background=dark
-
 let mapleader=','
 
 nmap <C-u> 5<C-y>
@@ -58,26 +56,51 @@ nmap <C-d> 5<C-e>
 nmap <leader><space> :nohlsearch<CR>
 nmap ga <Plug>(EasyAlign)
 
-command! SourceVim :source ~/.vimrc
-command! SourceNvim :source ~/.config/nvim/init.vim
+if exists("g:gui_oni")
+    :so ~/oni.vim
+else
+    :so ~/normal.vim
+end
 
-" Open NERDTree when vim starts up on opening a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" if !exists("g:gui_oni")
+"     syntax on
+"     set t_Co=256
+"     colorscheme gruvbox
+"     set background=dark
 
-" Close vim if the only window left open is a NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"     " NERDTree commands
+"     nmap <leader>to :NERDTreeToggle<CR>
+"     nmap <leader>tf :NERDTreeFind<CR>
+"     nmap <leader>tc :NERDTreeCWD<CR>
 
-" Show hidden files in NERDTree
-let NERDTreeShowHidden=1
+"     " Show hidden files in NERDTree
+"     let NERDTreeShowHidden=1
 
-" NERDTree commands
-nmap <leader>to :NERDTreeToggle<CR>
-nmap <leader>tf :NERDTreeFind<CR>
-nmap <leader>tc :NERDTreeCWD<CR>
+"     " CTRL P ignores
+"     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-" CTRL P ignores
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+"     " Close vim if the only window left open is a NERDTree
+"     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"     " Open NERDTree when vim starts up on opening a directory
+"     autocmd StdinReadPre * let s:std_in=1
+"     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" endif
+
+" let mapleader=','
+
+" nmap <C-u> 5<C-y>
+" nmap <C-d> 5<C-e>
+
+" nmap <leader><space> :nohlsearch<CR>
+" nmap ga <Plug>(EasyAlign)
+
+" command! SourceVim :source ~/.vimrc
+" command! SourceNvim :source ~/.config/nvim/init.vim
+
+"
+" OLD STUFF
+"
 
 " set t_vb=
 

@@ -86,9 +86,19 @@
   "[java]": {
     "editor.formatOnSave": false
   },
+  "[elm]": {
+    "editor.formatOnSave": false
+  },
+  "[velocity]": {
+    "editor.formatOnSave": false
+  },
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "java.errors.incompleteClasspath.severity": "ignore",
   "editor.lineNumbers": "relative",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "capitalize.special": [
+    "SBAB"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always"
 }

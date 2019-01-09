@@ -198,7 +198,12 @@
   {
     "key": "ctrl+e",
     "command": "editor.emmet.action.expandAbbreviation",
-    "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+    "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && editorLangId != 'elm'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "extension.expandAbbreviation",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Insert' && editorLangId == 'elm'"
   },
   {
     "key": "ctrl+shift+l",
