@@ -9,6 +9,7 @@ FISH=$(which fish)
 if [ $SHELL != $FISH ]; then
   echo "+ Hello"
 
+  # TODO Verify this check
   if !(grep -q $FISH /etc/shells); then
     echo "+ Appending Fish to /etc/shells"
     which fish | sudo tee -a /etc/shells
@@ -18,6 +19,7 @@ if [ $SHELL != $FISH ]; then
   chsh -s $FISH
 fi
 
+# TODO Fix this check
 # Install oh-my-fish
 if type omf >/dev/null 2>&1; then
   echo "+ Installing oh-my-fish..."

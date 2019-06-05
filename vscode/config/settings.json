@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
   "editor.fontFamily": "Input, Menlo, Monaco, monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "editor.tabSize": 2,
@@ -90,5 +90,7 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "java.errors.incompleteClasspath.severity": "ignore",
   "editor.lineNumbers": "relative",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "workbench.fontAliasing": "auto",
+  "editor.fontWeight": "600"
 }
