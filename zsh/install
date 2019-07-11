@@ -12,16 +12,27 @@ else
 fi
 
 # Symlink .zshrc
-echo "+ Symlink .zshrc"
-if [ -f ~/.zshrc ]; then
-  mv ~/.zshrc ~/.zshrc.pre-dotfiles
+if [ -L ~/.zshrc ]; then
+  echo "+ .zshrc is already symlinked"
+else
+  if [ -f ~/.zshrc ]; then
+    # Rename existing .zshrc before symlinking
+    echo "+ Renaming existing .zshrc -> .zshrc.pre-dotfiles"
+    mv ~/.zshrc ~/.zshrc.pre-dotfiles
+  fi
+
+  echo "+ Symlink .zshrc"
+  ln -sf $DIR/zshrc ~/.zshrc
 fi
-ln -sf $DIR/zshrc ~/.zshrc
 
 # Install Pure prompt
 if type npm >/dev/null 2>&1; then
-  echo "+ Installing Pure prompt"
-  npm install -g pure-prompt
+  if ! npm list --depth 1 --global pure-prompt > /dev/null 2>&1; then
+    echo "+ Installing Pure prompt"
+    npm install --global pure-prompt
+  else
+    echo "+ Pure prompt already installed"
+  fi
 else
   echo "! Install pure-prompt manually via npm"
 fi
