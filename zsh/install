@@ -17,3 +17,11 @@ if [ -f ~/.zshrc ]; then
   mv ~/.zshrc ~/.zshrc.pre-dotfiles
 fi
 ln -sf $DIR/zshrc ~/.zshrc
+
+# Install Pure promt
+if type npm >/dev/null 2>&1; then
+  echo "+ Installing Pure prompt"
+  npm install -g pure-prompt
+else
+  echo "! Install Pure prompt manually via npm"
+fi
