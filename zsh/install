@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Install Oh My Zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+  echo "+ Installing Oh My Zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+  echo "+ Oh My Zsh already installed"
+fi
+
+# Symlink .zshrc
+echo "+ Symlink .zshrc"
+if [ -f ~/.zshrc ]; then
+  mv ~/.zshrc ~/.zshrc.pre-dotfiles
+fi
+ln -sf $DIR/zshrc ~/.zshrc

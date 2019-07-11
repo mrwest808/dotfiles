@@ -1,0 +1,62 @@
+# Oh My Zsh configuration
+# ---------------------------------------
+export ZSH="/Users/jwest/.oh-my-zsh"
+ZSH_THEME=""
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# Pure prompt
+# ---------------------------------------
+autoload -U promptinit; promptinit
+prompt pure
+
+# Environment variables
+# ---------------------------------------
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Key bindings
+# ---------------------------------------
+bindkey '§' autosuggest-accept
+bindkey '[C' forward-word
+bindkey '[D' backward-word
+
+# Aliases
+# ---------------------------------------
+alias x="exit"
+alias l="ls -la"
+alias ..="cd .."
+alias ...="cd ../.."
+alias gs="git status"
+alias gaa="git add --all"
+alias gpl="git pull"
+alias gph="git push"
+alias gc="git commit -v"
+alias nvim="vim"
+alias c="code ."
+alias gcz="git cz"
+
+# Plugins
+# ---------------------------------------
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+. /usr/local/etc/profile.d/z.sh
+
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238 (specifically comment #issuecomment-389324292)
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
