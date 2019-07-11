@@ -60,3 +60,9 @@ pastefinish() {
 }
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
+
+# Computer-specific overrides
+# ---------------------------------------
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
