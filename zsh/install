@@ -18,10 +18,10 @@ if [ -f ~/.zshrc ]; then
 fi
 ln -sf $DIR/zshrc ~/.zshrc
 
-# Install Pure promt
+# Install Pure prompt
 if type npm >/dev/null 2>&1; then
   echo "+ Installing Pure prompt"
   npm install -g pure-prompt
 else
-  echo "! Install Pure prompt manually via npm"
+  echo "! Install pure-prompt manually via npm"
 fi
