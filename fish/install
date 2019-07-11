@@ -21,7 +21,7 @@ fi
 
 # TODO Fix this check
 # Install oh-my-fish
-if type omf >/dev/null 2>&1; then
+if ! type omf >/dev/null 2>&1; then
   echo "+ Installing oh-my-fish..."
   curl -L https://get.oh-my.fish | fish
 fi
