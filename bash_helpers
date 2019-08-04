@@ -10,9 +10,9 @@ function _symlink {
   else
     if [ -f $dest_path ]; then
       # Rename existing file before symlinking
-      RENAMED="$dest_path.pre-dotfiles"
-      echo "+ Renaming $dest_path -> $RENAMED"
-      mv $dest_path $RENAMED
+      local renamed="$dest_path.pre-dotfiles"
+      echo "+ Renaming $dest_path -> $renamed"
+      mv $dest_path $renamed
     fi
 
     echo "+ Symlink $dest_path"
