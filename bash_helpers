@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+function _symlink {
+  local src_path=$1
+  local dest_path=$2
+
+  if [ -L $dest_path ]; then
+    echo "+ $dest_path is already symlinked"
+  else
+    if [ -f $dest_path ]; then
+      # Rename existing file before symlinking
+      RENAMED="$dest_path.pre-dotfiles"
+      echo "+ Renaming $dest_path -> $RENAMED"
+      mv $dest_path $RENAMED
+    fi
+
+    echo "+ Symlink $dest_path"
+    ln -sf $src_path $dest_path
+  fi
+}

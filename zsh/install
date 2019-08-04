@@ -2,28 +2,18 @@
 set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/../bash_helpers
 
 # Install Oh My Zsh
-if [ ! -d ~/.oh-my-zsh ]; then
+if [ -d ~/.oh-my-zsh ]; then
+  echo "+ Oh My Zsh already installed"
+else
   echo "+ Installing Oh My Zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-else
-  echo "+ Oh My Zsh already installed"
 fi
 
 # Symlink .zshrc
-if [ -L ~/.zshrc ]; then
-  echo "+ .zshrc is already symlinked"
-else
-  if [ -f ~/.zshrc ]; then
-    # Rename existing .zshrc before symlinking
-    echo "+ Renaming existing .zshrc -> .zshrc.pre-dotfiles"
-    mv ~/.zshrc ~/.zshrc.pre-dotfiles
-  fi
-
-  echo "+ Symlink .zshrc"
-  ln -sf $DIR/zshrc ~/.zshrc
-fi
+_symlink $DIR/zshrc ~/.zshrc
 
 # Install Pure prompt
 if type npm >/dev/null 2>&1; then
