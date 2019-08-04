@@ -55,6 +55,11 @@ let mapleader=','
 nmap <C-u> 5<C-y>
 nmap <C-d> 5<C-e>
 
+nmap <leader>y "*y
+nmap <leader>p "*p
+nmap <leader>Y "*Y
+nmap <leader>P "*P
+
 nmap <leader><space> :nohlsearch<CR>
 nmap ga <Plug>(EasyAlign)
 

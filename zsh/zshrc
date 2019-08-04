@@ -35,6 +35,7 @@ alias gc="git commit -v"
 alias nvim="vim"
 alias c="code ."
 alias gcz="git cz"
+alias oni="/Applications/Onivim2.App/Contents/MacOS/Oni2"
 
 # Plugins
 # ---------------------------------------
