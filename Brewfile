@@ -2,8 +2,6 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 
-# brew 'fish'
-brew 'fzf'
 brew 'git'
 brew 'node'
 brew 'vim'
