@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "editor.fontFamily": "Input, Menlo, Monaco, monospace",
-  "editor.fontSize": 13,
+  "editor.fontFamily": "IBM Plex Mono, Input, Menlo, Monaco, monospace",
+  "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "editor.tabSize": 2,
@@ -92,5 +92,6 @@
   "editor.lineNumbers": "relative",
   "breadcrumbs.enabled": true,
   "workbench.fontAliasing": "auto",
-  "editor.fontWeight": "600"
+  "editor.fontWeight": "600",
+  "workbench.list.automaticKeyboardNavigation": false
 }
