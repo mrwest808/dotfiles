@@ -93,5 +93,8 @@
   "breadcrumbs.enabled": true,
   "workbench.fontAliasing": "auto",
   "editor.fontWeight": "600",
-  "workbench.list.automaticKeyboardNavigation": false
+  "workbench.list.automaticKeyboardNavigation": false,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
