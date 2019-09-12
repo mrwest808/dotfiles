@@ -198,6 +198,9 @@ sudo chflags nohidden /Volumes
 # Dock, Dashboard, and hot corners
 # ----------------------------------------------------------------------------
 
+# Only show open apps (Dock)
+defaults write com.apple.dock static-only -bool TRUE; killall Dock
+
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
