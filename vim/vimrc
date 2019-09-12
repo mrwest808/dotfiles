@@ -10,6 +10,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'connorholyday/vim-snazzy'
 
 call plug#end()
 
@@ -47,7 +48,7 @@ endif
 
 syntax on
 set t_Co=256
-colorscheme gruvbox
+colorscheme snazzy
 set background=dark
 
 let mapleader=','
