@@ -3,6 +3,11 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+if [ ! -d ~/Library/Application\ Support/Code/User ]; then
+  echo "! VSCode application folder doesn't exist. Run VSCode before running this."
+  exit 1
+fi
+
 # # Install packages
 # echo "+ Installing VSCode packages..."
 # cat $DIR/packages.txt | xargs -L 1 echo code --install-extension
