@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "editor.fontFamily": "IBM Plex Mono, Input, Menlo, Monaco, monospace",
+  "editor.fontFamily": "SF Mono, Input, Menlo, Monaco, monospace",
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.rulers": [80],
@@ -72,7 +72,7 @@
     "*.mdx": "mdx",
     ".stylelintrc": "json"
   },
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.shell.osx": "/bin/zsh",
   "typescript.autoImportSuggestions.enabled": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "extensions.ignoreRecommendations": false,
