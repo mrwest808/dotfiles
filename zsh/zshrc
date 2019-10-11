@@ -2,7 +2,7 @@
 # ---------------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=""
-plugins=(git)
+plugins=(git vagrant)
 source $ZSH/oh-my-zsh.sh
 
 # Pure prompt
@@ -21,6 +21,7 @@ export LC_ALL="en_US.UTF-8"
 bindkey '§' autosuggest-accept
 bindkey '[C' forward-word
 bindkey '[D' backward-word
+bindkey '^H' backward-kill-word
 
 # Aliases
 # ---------------------------------------
@@ -32,6 +33,7 @@ alias gs="git status"
 alias gaa="git add --all"
 alias gpl="git pull"
 alias gph="git push"
+alias gphf="git push --follow-tags"
 alias gc="git commit -v"
 alias nvim="vim"
 alias c="code ."

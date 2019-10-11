@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
   "editor.fontFamily": "SF Mono, Input, Menlo, Monaco, monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.rulers": [80],
   "editor.tabSize": 2,
@@ -64,13 +64,13 @@
     }
   ],
   "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 0,
   "materialTheme.fixIconsRunning": false,
   "editor.snippetSuggestions": "top",
   "files.associations": {
     "*.twig": "php",
     "*.mdx": "mdx",
-    ".stylelintrc": "json"
+    ".stylelintrc": "json",
+    "*.svelte": "svelte"
   },
   "terminal.integrated.shell.osx": "/bin/zsh",
   "typescript.autoImportSuggestions.enabled": false,
@@ -95,6 +95,19 @@
   "editor.fontWeight": "600",
   "workbench.list.automaticKeyboardNavigation": false,
   "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontWeight": "600",
+  "terminal.integrated.fontSize": 14,
+  "workbench.iconTheme": "city-lights-icons-vsc-light",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
