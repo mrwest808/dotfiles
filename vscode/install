@@ -10,7 +10,7 @@ fi
 
 # # Install packages
 # echo "+ Installing VSCode packages..."
-# cat $DIR/packages.txt | xargs -L 1 echo code --install-extension
+# cat $DIR/packages.txt | xargs -L 1 code --install-extension
 
 # Symlink config files
 echo "+ Symlinking VSCode config files"
