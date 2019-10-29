@@ -11,6 +11,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'elzr/vim-json'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'connorholyday/vim-snazzy'
+Plug 'matze/vim-move'
+Plug 'darfink/vim-plist'
 
 call plug#end()
 
