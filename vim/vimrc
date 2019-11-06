@@ -13,6 +13,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'connorholyday/vim-snazzy'
 Plug 'matze/vim-move'
 Plug 'darfink/vim-plist'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
 
