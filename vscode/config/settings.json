@@ -16,7 +16,6 @@
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,
   "prettier.tabWidth": 2,
-  "prettier.eslintIntegration": true,
   "typescript.npm": "/usr/local/bin/npm",
   "workbench.colorTheme": "Oceanic Next Italic",
   "vim.easymotion": true,
@@ -70,7 +69,8 @@
     "*.twig": "php",
     "*.mdx": "mdx",
     ".stylelintrc": "json",
-    "*.svelte": "svelte"
+    "*.svelte": "svelte",
+    "*.pcss": "css"
   },
   "terminal.integrated.shell.osx": "/bin/zsh",
   "typescript.autoImportSuggestions.enabled": false,
@@ -109,5 +109,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "css.validate": false
 }

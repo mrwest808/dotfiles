@@ -109,7 +109,7 @@
   },
   {
     "key": "d",
-    "command": "deleteFile",
+    "command": "moveFileToTrash",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
   },
   {
