@@ -40,6 +40,14 @@ alias c="code ."
 alias gcz="git cz"
 alias oni="/Applications/Onivim2.App/Contents/MacOS/Oni2"
 
+# Functions
+# ---------------------------------------
+# Start a web server for the specified directory
+function simple-server() {
+  local dir=$1
+  (cd $dir && python -m SimpleHTTPServer 8000)
+}
+
 # Plugins
 # ---------------------------------------
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
