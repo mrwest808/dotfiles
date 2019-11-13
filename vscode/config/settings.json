@@ -13,9 +13,6 @@
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
-  "prettier.trailingComma": "es5",
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 2,
   "typescript.npm": "/usr/local/bin/npm",
   "workbench.colorTheme": "Oceanic Next Italic",
   "vim.easymotion": true,
@@ -110,5 +107,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "css.validate": false
+  "css.validate": false,
+  "files.exclude": {
+    "**/node_modules": true
+  }
 }
