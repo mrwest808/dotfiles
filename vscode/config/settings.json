@@ -67,7 +67,8 @@
     "*.mdx": "mdx",
     ".stylelintrc": "json",
     "*.svelte": "svelte",
-    "*.pcss": "css"
+    "*.pcss": "css",
+    "*.ts": "typescript"
   },
   "terminal.integrated.shell.osx": "/bin/zsh",
   "typescript.autoImportSuggestions.enabled": false,
