@@ -87,7 +87,6 @@
   "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "java.errors.incompleteClasspath.severity": "ignore",
-  "editor.lineNumbers": "relative",
   "breadcrumbs.enabled": true,
   "workbench.fontAliasing": "auto",
   "editor.fontWeight": "600",
@@ -111,5 +110,19 @@
   "css.validate": false,
   "files.exclude": {
     "**/node_modules": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveshare.connectionMode": "direct",
+  "liveshare.anonymousGuestApproval": "reject",
+  "liveshare.autoShareServers": false,
+  "liveshare.autoShareTerminals": false,
+  "liveshare.guestApprovalRequired": true,
+  "deno.enable": false,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "editor.lineNumbers": "relative",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

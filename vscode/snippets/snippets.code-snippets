@@ -92,5 +92,11 @@
     "prefix": "it",
     "body": ["it('$1', () => {", "\t$2", "})"],
     "description": "it statement"
+  },
+  "td": {
+    "scope": "markdown",
+    "prefix": "td",
+    "body": "- [ ] ",
+    "description": "Todo item"
   }
 }

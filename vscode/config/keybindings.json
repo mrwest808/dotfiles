@@ -181,6 +181,16 @@
     "command": "workbench.view.extensions"
   },
   {
+    "key": "cmd+' shift+t",
+    "command": "workbench.action.quickOpen",
+    "args": "~/tasks.todo"
+  },
+  {
+    "key": "cmd+' shift+b",
+    "command": "workbench.action.quickOpen",
+    "args": "~/backlog.todo"
+  },
+  {
     "key": "[Minus]",
     "command": "git.stageSelectedRanges",
     "when": "isInDiffEditor && editorHasSelection && activeViewlet == 'workbench.view.scm'"
@@ -262,5 +272,10 @@
     "key": "ctrl+g",
     "command": "-extension.vim_ctrl+g",
     "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+  },
+  {
+    "key": "cmd+m",
+    "command": "-markdown.extension.editing.toggleMath",
+    "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
   }
 ]
