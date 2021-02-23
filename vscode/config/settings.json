@@ -51,6 +51,12 @@
   "typescript.locale": "en",
   "typescript.tsserver.useSeparateSyntaxServer": false,
   "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.easymotionMarkerBackgroundColor": "#1A1A1A",
+  "vim.easymotionMarkerFontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+  "vim.easymotionMarkerFontWeight": "600",
+  "vim.easymotionMarkerForegroundColorOneChar": "tomato",
+  "vim.easymotionMarkerForegroundColorTwoChar": "tomato",
   "vim.leader": ",",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
