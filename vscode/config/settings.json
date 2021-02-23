@@ -54,9 +54,13 @@
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.easymotionMarkerBackgroundColor": "#1A1A1A",
   "vim.easymotionMarkerFontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+  "vim.easymotionMarkerFontSize": "15",
   "vim.easymotionMarkerFontWeight": "600",
-  "vim.easymotionMarkerForegroundColorOneChar": "tomato",
-  "vim.easymotionMarkerForegroundColorTwoChar": "tomato",
+  "vim.easymotionMarkerForegroundColorOneChar": "coral",
+  "vim.easymotionMarkerForegroundColorTwoChar": "coral",
+  "vim.easymotionMarkerWidthPerChar": 12,
+  "vim.easymotionMarkerHeight": 16,
+  "vim.easymotionMarkerYOffset": -4,
   "vim.leader": ",",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
