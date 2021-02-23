@@ -1,25 +1,62 @@
 // Place your settings in this file to overwrite the default settings
 {
-  "editor.fontFamily": "SF Mono, Input, Menlo, Monaco, monospace",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "breadcrumbs.enabled": true,
+  "css.validate": false,
+  "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
+  "editor.fontWeight": "600",
   "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": true,
   "editor.rulers": [80],
   "editor.tabSize": 2,
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "mdx": "javascriptreact",
-    "svelte": "html"
+  "files.associations": {
+    "*.twig": "php",
+    "*.mdx": "mdx",
+    ".stylelintrc": "json",
+    "*.svelte": "svelte",
+    "*.pcss": "css",
+    "*.ts": "typescript"
   },
-  "emmet.syntaxProfiles": {
-    "javascript": "jsx"
+  "files.exclude": {
+    "**/node_modules": true
   },
-  "typescript.npm": "/usr/local/bin/npm",
-  "workbench.colorTheme": "Oceanic Next Italic",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "html.autoClosingTags": false,
+  "javascript.autoClosingTags": false,
+  "liveshare.anonymousGuestApproval": "reject",
+  "liveshare.authenticationProvider": "Microsoft",
+  "liveshare.autoShareServers": false,
+  "liveshare.autoShareTerminals": false,
+  "liveshare.connectionMode": "direct",
+  "liveshare.guestApprovalRequired": true,
+  "liveshare.presence": true,
+  "svelte.plugin.typescript.diagnostics.enable": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "600",
+  "typescript.autoClosingTags": false,
+  "typescript.locale": "en",
+  "typescript.tsserver.useSeparateSyntaxServer": false,
   "vim.easymotion": true,
   "vim.leader": ",",
   "vim.insertModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-u>"],
+      "before": [
+        "<C-u>"
+      ],
       "after": [],
       "commands": [
         {
@@ -31,15 +68,29 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<C-u>"],
-      "after": ["5", "<C-y>"]
+      "before": [
+        "<C-u>"
+      ],
+      "after": [
+        "5",
+        "<C-y>"
+      ]
     },
     {
-      "before": ["<C-d>"],
-      "after": ["5", "<C-e>"]
+      "before": [
+        "<C-d>"
+      ],
+      "after": [
+        "5",
+        "<C-e>"
+      ]
     },
     {
-      "before": ["leader", "t", "f"],
+      "before": [
+        "leader",
+        "t",
+        "f"
+      ],
       "after": [],
       "commands": [
         {
@@ -49,7 +100,11 @@
       ]
     },
     {
-      "before": ["leader", "t", "o"],
+      "before": [
+        "leader",
+        "t",
+        "o"
+      ],
       "after": [],
       "commands": [
         {
@@ -59,70 +114,8 @@
       ]
     }
   ],
-  "workbench.startupEditor": "newUntitledFile",
-  "materialTheme.fixIconsRunning": false,
-  "editor.snippetSuggestions": "top",
-  "files.associations": {
-    "*.twig": "php",
-    "*.mdx": "mdx",
-    ".stylelintrc": "json",
-    "*.svelte": "svelte",
-    "*.pcss": "css",
-    "*.ts": "typescript"
-  },
-  "terminal.integrated.shell.osx": "/bin/zsh",
-  "typescript.autoImportSuggestions.enabled": false,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "extensions.ignoreRecommendations": false,
-  "files.insertFinalNewline": true,
-  "[c]": {
-    "editor.formatOnSave": false
-  },
-  "[svelte]": {
-    "editor.formatOnSave": false
-  },
-  "[java]": {
-    "editor.formatOnSave": false
-  },
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "breadcrumbs.enabled": true,
+  "workbench.colorTheme": "Oceanic Next Italic",
+  "workbench.editor.openSideBySideDirection": "down",
   "workbench.fontAliasing": "auto",
-  "editor.fontWeight": "600",
-  "workbench.list.automaticKeyboardNavigation": false,
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "window.zoomLevel": 0,
-  "terminal.integrated.fontWeight": "600",
-  "terminal.integrated.fontSize": 14,
-  "workbench.iconTheme": "city-lights-icons-vsc-light",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "css.validate": false,
-  "files.exclude": {
-    "**/node_modules": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "liveshare.connectionMode": "direct",
-  "liveshare.anonymousGuestApproval": "reject",
-  "liveshare.autoShareServers": false,
-  "liveshare.autoShareTerminals": false,
-  "liveshare.guestApprovalRequired": true,
-  "deno.enable": false,
-  "eslint.codeActionsOnSave.mode": "problems",
-  "editor.lineNumbers": "relative",
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "workbench.sideBar.location": "right",
 }
