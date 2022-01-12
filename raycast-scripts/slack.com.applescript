@@ -13,7 +13,7 @@
 # @raycast.author Johan West
 # @raycast.authorURL johanwest.com
 
-set theUrl to "https://app.slack.com/client/T0966CWJU/D0966Q3T4"
+set theUrl to "https://app.slack.com/client/T44JGLZNW/D6FB6H49F"
 set theUrlPattern to "app.slack.com"
 
 openInSafari(theUrl, theUrlPattern)
