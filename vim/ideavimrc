@@ -1,0 +1,6 @@
+set relativenumber
+
+let mapleader=','
+
+nmap <C-u> 5<C-y>
+nmap <C-d> 5<C-e>

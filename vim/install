@@ -15,6 +15,7 @@ fi
 
 # Symlink .vimrc
 _symlink $DIR/vimrc ~/.vimrc
+_symlink $DIR/ideavimrc ~/.ideavimrc
 
 # Symlink nvim config
 if [ -d ~/.config/nvim/autoload ]; then
