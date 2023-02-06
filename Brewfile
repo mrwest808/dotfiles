@@ -1,12 +1,26 @@
 cask_args appdir: '/Applications'
 
-brew 'git'
-brew 'vim'
+brew 'colima'
+brew 'maven'
+brew 'neovim'
+brew 'tmux'
+brew 'volta'
 brew 'z'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
+
+cask 'alacritty'
+cask 'corretto'
+
+# brew 'git'
+# brew 'vim'
+# brew 'z'
+# brew 'zsh'
+# brew 'zsh-autosuggestions'
+# brew 'zsh-completions'
+# brew 'zsh-syntax-highlighting'
 
 # cask 'alfred'
 # cask 'firefox'

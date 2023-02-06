@@ -64,8 +64,8 @@ function simple-server() {
 
 # Plugins
 # ---------------------------------------
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
@@ -79,7 +79,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-. /usr/local/etc/profile.d/z.sh
+. /opt/homebrew/etc/profile.d/z.sh
 
 # This speeds up pasting w/ autosuggest
 # https://github.com/zsh-users/zsh-autosuggestions/issues/238 (specifically comment #issuecomment-389324292)
