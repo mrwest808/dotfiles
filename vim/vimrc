@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/vim-easy-align'
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
@@ -14,6 +15,7 @@ Plug 'connorholyday/vim-snazzy'
 Plug 'matze/vim-move'
 Plug 'darfink/vim-plist'
 Plug 'leafgarland/typescript-vim'
+Plug 'ziglang/zig.vim'
 
 call plug#end()
 
@@ -44,6 +46,8 @@ set foldlevelstart=99
 set nocursorline
 set synmaxcol=1000
 set ttyfast                    " Faster redrawing
+
+let g:zig_fmt_autosave = 0
 
 if has('termguicolors')
   set termguicolors

@@ -48,7 +48,7 @@ alias gph="git push"
 alias gphf="git push --follow-tags"
 alias gc="git commit -v"
 alias gcn="git commit -v --no-verify"
-alias nvim="vim"
+alias vim="nvim"
 alias c="code ."
 alias cx="code . && exit"
 alias gcz="git cz"
@@ -102,6 +102,13 @@ fi
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# bun completions
+[ -s "/Users/jwet/.bun/_bun" ] && source "/Users/jwet/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

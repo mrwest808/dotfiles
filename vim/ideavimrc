@@ -1,6 +1,26 @@
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+set number
 set relativenumber
+set incsearch
 
 let mapleader=','
 
+set easymotion
+
 nmap <C-u> 5<C-y>
 nmap <C-d> 5<C-e>
+
+nmap <leader><leader>w <Plug>(easymotion-s)
+nmap <leader><leader>b <Plug>(easymotion-f)
+
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>em <Action>(ExtractMethod)
+
+nmap <leader>cot <Action>(CloseAllEditorsButActive)
+nmap <leader>cat <Action>(CloseAllEditors)
+nmap <leader>cop <Action>(CloseOtherProjects)
+nmap <leader>cap <Action>(CloseAllProjects)
+nmap <leader>tp <Action>(ActivateProjectToolWindow)
