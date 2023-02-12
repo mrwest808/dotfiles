@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+mkdir -p $HOME/.config
+
+# Symlink configuration files & directories
+ln -s $DIR/.tmux.conf $HOME/.tmux.conf
+ln -s $DIR/.config/alacritty $HOME/.config/alacritty
+ln -s $DIR/.config/nvim $HOME/.config/nvim
