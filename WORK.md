@@ -69,3 +69,8 @@ volta install skal yarn@1
 ```
 
 Copy `skal`-related files from another computer.
+
+## Setup IntelliJ Ultimate
+
+- Ensure `.ideavim` is symlinked to `~`.
+- Enable Settings Sync in IntelliJ's settings (choose "get settings")
