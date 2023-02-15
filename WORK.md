@@ -1,4 +1,4 @@
-# Updated installation instructions
+# dotfiles
 
 ## Clone Git repository
 
@@ -39,7 +39,7 @@ Restart computer afterwards.
 ## Configure terminal
 
 - `touch ~/.hushlogin`
-- Clone `.config`-related repositories (Alacritty, Neovim, etc.)
+- Clone `.config`-related [files](.config/README.md) (Alacritty, Neovim, etc.)
 - Install Nerd-patched font(s)
 - Install [powerline10k](https://github.com/romkatv/powerlevel10k)
   - Pure, Original, Right, No (time), 2 lines, Sparse, Transient prompt, Verbose
@@ -72,5 +72,5 @@ Copy `skal`-related files from another computer.
 
 ## Setup IntelliJ Ultimate
 
-- Ensure `.ideavim` is symlinked to `~`.
+- Ensure `.ideavim` is symlinked to `~`
 - Enable Settings Sync in IntelliJ's settings (choose "get settings")
