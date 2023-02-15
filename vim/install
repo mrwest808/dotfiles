@@ -4,27 +4,5 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $DIR/../bash_helpers
 
-# TODO: Remove redundant things related to Vim
-
-# # Install vim-plug
-# if [ -f ~/.vim/autoload/plug.vim ]; then
-#   echo "+ vim-plug is already installed"
-# else
-#   echo "+ Installing vim-plug..."
-#   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-#       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# fi
-
 # Symlink .vimrc
-# _symlink $DIR/vimrc ~/.vimrc
 _symlink $DIR/ideavimrc ~/.ideavimrc
-
-# # Symlink nvim config
-# if [ -d ~/.config/nvim/autoload ]; then
-#   echo "+ nvim config already set up"
-# else
-#   echo "+ Symlink nvim config"
-#   mkdir -p ~/.config/nvim/autoload
-#   ln -sf $DIR/vimrc ~/.config/nvim/init.vim
-#   ln -sf ~/.vim/autoload/plug.vim ~/.config/nvim/autoload/
-# fi

@@ -22,11 +22,3 @@ fi
 
 # Symlink .zshrc
 _symlink $DIR/zshrc ~/.zshrc
-
-# Install Pure prompt
-if [ -d ~/.zsh/pure ];then
-  echo "+ Pure prompt already installed"
-else
-  mkdir -p "$HOME/.zsh"
-  git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-fi
