@@ -6,5 +6,7 @@ mkdir -p $HOME/.config
 
 # Symlink configuration files & directories
 ln -s $DIR/.tmux.conf $HOME/.tmux.conf
-ln -s $DIR/.config/alacritty $HOME/.config/alacritty
-ln -s $DIR/.config/nvim $HOME/.config/nvim
+ln -s $DIR/alacritty $HOME/.config/alacritty
+ln -s $DIR/nvim $HOME/.config/nvim
+
+echo "Symlinked configuration files & directories"
