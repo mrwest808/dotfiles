@@ -7,6 +7,12 @@ local map = vim.keymap
 map.set("n", "<C-d>", "5<C-e>")
 map.set("n", "<C-u>", "5<C-y>")
 
+-- Move lines up/down
+map.set({ "n", "v" }, "ª", "<Cmd>move-2<CR>")
+map.set({ "n", "v" }, "√", "<Cmd>move+<CR>")
+map.del({ "i", "n", "v" }, "<M-k>")
+map.del({ "i", "n", "v" }, "<M-j>")
+
 -- Yank to / paste from system clipboard
 map.set({ "n", "v" }, "<leader>y", '"*y', { desc = "Yank to system clipboard" })
 map.set({ "n", "v" }, "<leader>p", '"*p', { desc = "Paste from system clipboard" })
