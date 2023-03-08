@@ -21,4 +21,7 @@ return {
     "ggandor/flit.nvim",
     enabled = false,
   },
+  {
+    "jiangmiao/auto-pairs",
+  },
 }
