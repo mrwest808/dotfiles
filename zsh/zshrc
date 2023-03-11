@@ -100,6 +100,10 @@ if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
 
+if [ -f $HOME/.zshrc.tmux ]; then
+  source $HOME/.zshrc.tmux
+fi
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
