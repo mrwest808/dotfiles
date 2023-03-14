@@ -17,9 +17,22 @@ map.del({ "i", "n", "v" }, "<M-j>")
 map.set({ "n", "v" }, "<leader>y", '"*y', { desc = "Yank to system clipboard" })
 map.set({ "n", "v" }, "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 
-map.set("n", "<C-p>", "<Cmd>Telescope find_files hidden=true<CR>", { desc = "Find files" })
+-- Ensure ctrl+space opens completions
+-- The ctrl+space keypress doesn't always register, not sure if related
+-- to Alacritty or tmux yet..
+local present, cmp = pcall(require, "cmp")
+if present then
+  map.set("i", " ", cmp.mapping.complete()) -- alt+space
+  map.set("i", "<c-space>", cmp.mapping.complete())
+end
 
--- Override LazyVim keybinding to switch buffer to "close other buffers"
+--
+-- Plugin mappings that I haven't been able to override in ../plugins
+--
+
+-- [Bufferline]
+
+-- ~Close other buffers
 map.set(
   "n",
   "<leader>bb",
@@ -27,7 +40,6 @@ map.set(
   { desc = "Close others" }
 )
 
+-- Additional prev/next buffer mappings
 map.set("n", "<Left>b", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
 map.set("n", "<Right>b", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-map.set("n", "gbh", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
-map.set("n", "gbl", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })

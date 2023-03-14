@@ -6,13 +6,13 @@ return {
         "prettierd",
         "stylua",
         "eslint_d",
-        "deno",
-        -- "shellcheck",
-        -- "shfmt",
-        -- "black",
-        -- "isort",
-        -- "flake8",
       },
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
     },
   },
 }
