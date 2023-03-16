@@ -1,4 +1,4 @@
-function tmx() {
+function tmx:select() {
   if ! [[ -z ${TMUX} ]]; then
     echo "Already in a tmux session, aborting..."
     return
@@ -14,7 +14,7 @@ function tmx() {
     if [[ $should_continue == "n" ]]; then
       # Abort
     else
-      tmux
+      (cd ~; tmux)
     fi
 
     return
@@ -38,7 +38,7 @@ function tmx() {
   fi
 
   if [[ $session_number == "n" ]]; then
-    tmux
+    (cd ~; tmux)
     return
   fi
 
@@ -54,7 +54,12 @@ function tmx() {
   tmux attach -t $selected_session
 }
 
-function tmx:tmpl() {
+function tmx:template() {
+  if [[ -z ${TMUX} ]]; then
+    echo "Not in a tmux session, aborting..."
+    return
+  fi
+
   if ! [[ -d $HOME/.tmux-templates ]]; then
     mkdir $HOME/.tmux-templates
   fi
@@ -69,6 +74,11 @@ function tmx:tmpl() {
     echo "  $i) $name"
     ((i++))
   done
+
+  if [[ -f $HOME/.tmux-templates/$1 ]]; then
+    zsh $HOME/.tmux-templates/$1
+    return
+  fi
 
   if ! [[ ${#files[@]} -gt 0 ]]; then
     echo "Empty template folder, create a file to get started."
@@ -93,4 +103,12 @@ function tmx:tmpl() {
 
   template=${files[$template_number]}
   zsh $template
+}
+
+function tmx() {
+  if ! [[ -z ${TMUX} ]]; then
+    tmx:template "$@"
+  else
+    tmx:select
+  fi
 }
