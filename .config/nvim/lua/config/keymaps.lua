@@ -43,3 +43,7 @@ map.set(
 -- Additional prev/next buffer mappings
 map.set("n", "<Left>b", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
 map.set("n", "<Right>b", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+
+-- [vim-easy-align]
+
+map.set({ "n", "x" }, "ga", "<Plug>(EasyAlign)")

@@ -24,4 +24,7 @@ return {
   {
     "jiangmiao/auto-pairs",
   },
+  {
+    "junegunn/vim-easy-align",
+  },
 }
