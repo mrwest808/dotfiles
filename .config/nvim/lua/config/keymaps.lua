@@ -23,9 +23,10 @@ map.set({ "n", "v" }, "<leader>p", '"*p', { desc = "Paste from system clipboard"
 
 -- Binds the raw output of alt+space to open cmp completion panel
 -- I've mapped ctrl+space to match that output in Alacritty
-local present, cmp = pcall(require, "cmp")
-if present then
+local cmp_present, cmp = pcall(require, "cmp")
+if cmp_present then
   map.set("i", " ", cmp.mapping.complete()) -- alt+space
+  map.set("i", "<C-c>", cmp.mapping.complete()) -- alt+space
 end
 
 --
@@ -110,3 +111,24 @@ function EmmetExpandAbbreviationSortOf()
 end
 
 map.set("i", "<C-e>", "<cmd>lua EmmetExpandAbbreviationSortOf()<CR>", { noremap = true, silent = true })
+
+-- [LuaSnip]
+
+local luasnip_present, luasnip = pcall(require, "luasnip")
+if luasnip_present then
+  map.set({ "i", "s" }, "<C-k>", function()
+    if luasnip.expand_or_jumpable() then
+      luasnip.expand_or_jump()
+    end
+  end, { silent = true })
+  map.set({ "i", "s" }, "<C-j>", function()
+    if luasnip.jumpable(-1) then
+      luasnip.jump(-1)
+    end
+  end, { silent = true })
+  map.set("i", "<C-l>", function()
+    if luasnip.choice_active() then
+      luasnip.change_choice()
+    end
+  end, { silent = true })
+end

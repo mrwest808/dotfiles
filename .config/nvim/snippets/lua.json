@@ -1,0 +1,9 @@
+{
+  "preq": {
+    "prefix": "preq",
+    "body": [
+      "local present, $1 = pcall(require, '$2')",
+      "if not present then return end"
+    ]
+  }
+}

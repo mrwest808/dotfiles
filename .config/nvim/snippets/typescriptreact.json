@@ -1,0 +1,16 @@
+{
+  "react function component (ts)": {
+    "prefix": "rfc",
+    "body": [
+      "${1:import { FC \\} from 'react'",
+      "",
+      "}interface ${2:Component}Props {",
+      "  // ...",
+      "}",
+      "",
+      "export const ${2:Component}: FC<${2:Component}Props> = ($3) => {",
+      "  return ${4:null}",
+      "}"
+    ]
+  }
+}
