@@ -14,6 +14,7 @@ return {
     -- Overriding <leader>bb in lua/config/keymaps.lua
     keys = {
       { "<leader>bj", "<Cmd>BufferLinePick<CR>", desc = "Pick buffer (jump)" },
+      { "<leader>bc", "<Cmd>BufferLinePickClose<CR>", desc = "Pick buffer to close" },
     },
     opts = {
       options = {
