@@ -15,7 +15,7 @@
 # @raycast.author Johan West
 # @raycast.authorURL johanwest.com
 
-WEEK=$(date +"Week %U of %Y")
+WEEK=$(date +"Week %V of %Y")
 
 echo "${WEEK}"
 

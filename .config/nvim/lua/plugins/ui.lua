@@ -41,8 +41,10 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
+      render = "minimal",
       stages = "static",
-      timeout = 3000,
+      timeout = 2200,
     },
   },
+  -- { "christoomey/vim-tmux-navigator" },
 }

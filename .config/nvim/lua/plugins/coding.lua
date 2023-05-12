@@ -96,4 +96,11 @@ return {
       }
     end,
   },
+  {
+    "mrwest808/808.nvim",
+    config = function()
+      require("808").setup()
+      vim.keymap.set("i", "<C-e>", "<cmd>ExpandTag<CR>")
+    end,
+  },
 }
