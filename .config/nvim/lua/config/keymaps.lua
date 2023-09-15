@@ -71,3 +71,31 @@ if luasnip_present then
     end
   end, { silent = true })
 end
+
+-- map.set("n", "<C-a> h", "<C-U>TmuxNavigateLeft<CR>")
+-- map.set("n", "<C-a> l", "<C-U>TmuxNavigateRight<CR>")
+-- map.set("n", "<C-a> k", "<C-U>TmuxNavigateUp<CR>")
+-- map.set("n", "<C-a> j", "<C-U>TmuxNavigateDown<CR>")
+
+-- local telescope = require("telescope")
+--
+-- local custom_command_picker = function()
+--   local commands = {
+--     { display = "Custom Command 1", cmd = ":MyCommand1" },
+--     { display = "Custom Command 2", cmd = ":MyCommand2" },
+--   }
+--
+--   telescope.pickers
+--     .new({}, {
+--       prompt_title = "Custom Command Picker",
+--       finder = telescope.finders.new_table({
+--         results = commands,
+--       }),
+--       sorter = telescope.config.generic_sorter({}),
+--     })
+--     :find()
+-- end
+--
+-- map.set("n", "<leader>cp", function()
+--   custom_command_picker()
+-- end, { desc = "Enable Copilot" })

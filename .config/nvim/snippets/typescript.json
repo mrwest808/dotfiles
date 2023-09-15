@@ -1,1 +1,14 @@
-{}
+{
+  "console.log": {
+    "prefix": "log",
+    "body": "console.log($1)"
+  },
+  "console.warn": {
+    "prefix": "warn",
+    "body": "console.warn($1)"
+  },
+  "console.error": {
+    "prefix": "err",
+    "body": "console.error($1)"
+  }
+}

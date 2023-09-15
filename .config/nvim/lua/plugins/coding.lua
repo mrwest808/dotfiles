@@ -37,10 +37,32 @@ return {
       return {}
     end,
   },
-  -- Disable flit.nvim (~ enhanced f/F/t/T search)
   {
-    "ggandor/flit.nvim",
-    enabled = false,
+    "folke/flash.nvim",
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump({
+            search = {
+              mode = function(str)
+                return "\\<" .. str
+              end,
+            },
+          })
+        end,
+        desc = "Flash",
+      },
+    },
+    opts = {
+      modes = {
+        char = {
+          -- Disable enhacned f/F/t/T motions since they mess with my muscle memory
+          enabled = false,
+        },
+      },
+    },
   },
   {
     "jiangmiao/auto-pairs",
