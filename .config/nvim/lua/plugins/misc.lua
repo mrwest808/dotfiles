@@ -21,16 +21,16 @@ local function get_find_files_opts()
 end
 
 return {
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "prettierd",
-        "stylua",
-        "eslint_d",
-      },
-    },
-  },
+  -- {
+  --   "williamboman/mason.nvim",
+  --   opts = {
+  --     ensure_installed = {
+  --       "prettierd",
+  --       "stylua",
+  --       "eslint_d",
+  --     },
+  --   },
+  -- },
   {
     "nvim-telescope/telescope.nvim",
     keys = {
