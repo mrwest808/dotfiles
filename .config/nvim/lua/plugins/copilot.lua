@@ -3,24 +3,26 @@ return {
     "github/copilot.vim",
     lazy = true,
     cmd = "LazyInitCopilot",
-    -- init = function()
-    --   vim.cmd([[command LazyInitCopilot echo "This is a custom command"]])
-    -- end,
-    -- keys = {
-    --   {
-    --     "<C-p>",
-    --     mode = { "i" },
-    --     function()
-    --       print("Hello")
-    --       print("There")
-    --     end,
-    --     desc = "Wat",
-    --   },
-    -- },
+    config = function()
+      vim.api.nvim_create_user_command("LazyInitCopilot", function()
+        vim.cmd("CopilotLazyEnable")
+      end, {})
+
+      vim.api.nvim_create_user_command("CopilotLazyEnable", function()
+        vim.cmd("Copilot enable")
+        vim.cmd("Copilot status")
+      end, {})
+
+      vim.api.nvim_create_user_command("CopilotLazyDisable", function()
+        vim.cmd("Copilot disable")
+        vim.cmd("Copilot status")
+      end, {})
+
+      vim.api.nvim_create_user_command("CopilotLazyStatus", function()
+        vim.cmd("Copilot status")
+      end, {})
+    end,
   },
-  -- TODO: Modify available commands based on whether or not module is loaded
-  -- TODO: Before loaded, only show "Initialize Copilot"
-  -- TODO: After loaded, show "Enable Copilot", "Disable Copilot", and "Copilot status"
   {
     "nvim-telescope/telescope.nvim",
     optional = true,
@@ -29,25 +31,29 @@ return {
       {
         "<leader>cp",
         function()
+          -- Show only 'Copilot INIT' before the plugin is loaded
+          local function get_copilot_commands()
+            if vim.fn.exists(":Copilot") == 0 then
+              return {
+                { display = "Copilot INIT", cmd = "LazyInitCopilot" },
+              }
+            else
+              return {
+                { display = "Copilot ON", cmd = "CopilotLazyEnable" },
+                { display = "Copilot OFF", cmd = "CopilotLazyDisable" },
+                { display = "Copilot status", cmd = "CopilotLazyStatus" },
+              }
+            end
+          end
+
           local actions = require("telescope.actions")
           local action_state = require("telescope.actions.state")
           local finders = require("telescope.finders")
           local make_entry = require("telescope.make_entry")
           local pickers = require("telescope.pickers")
           local opts = {}
-          local commands = {
-            { display = "Copilot ON", cmd = "LazyInitCopilot" },
-            { display = "Copilot OFF", cmd = "Copilot disable" },
-            { display = "Copilot status", cmd = "Copilot status" },
-          }
 
-          if vim.fn.exists("g:plugs['github/copilot.vim']") then
-            print("Copilot")
-            print("Enabled")
-          else
-            print("Copilot")
-            print("Disabled")
-          end
+          local commands = get_copilot_commands()
 
           pickers
             .new(opts, {
@@ -68,6 +74,13 @@ return {
 
                   if selection == nil then
                     return
+                  end
+
+                  if selection.run_cmd ~= "LazyInitCopilot" then
+                    if vim.fn.exists(":Copilot") == 0 then
+                      print("Not executable, run 'Copilot ON' first.")
+                      return
+                    end
                   end
 
                   actions.close(prompt_bufnr)
@@ -94,8 +107,3 @@ return {
   --   },
   -- },
 }
--- {
---   "<C-p>",
---   Util.telescope("files", get_find_files_opts()),
---   desc = "Find Files",
--- },

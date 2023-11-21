@@ -2,13 +2,13 @@
   "react function component (ts)": {
     "prefix": "rfc",
     "body": [
-      "${1:import { FC \\} from 'react'",
+      "${1:import React from 'react'",
       "",
       "}interface ${2:${TM_FILENAME_BASE}}Props {",
       "  // ...",
       "}",
       "",
-      "export const ${2:${TM_FILENAME_BASE}}: FC<${2:${TM_FILENAME_BASE}}Props> = ($3) => {",
+      "export function ${2:${TM_FILENAME_BASE}}(${3:props}: ${2:${TM_FILENAME_BASE}}Props) {",
       "  return ${4:null}",
       "}"
     ]
