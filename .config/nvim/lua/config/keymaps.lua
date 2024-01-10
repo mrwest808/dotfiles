@@ -4,8 +4,12 @@
 
 local map = vim.keymap
 
+-- Up/down navigation
 map.set("n", "<C-d>", "5<C-e>")
 map.set("n", "<C-u>", "5<C-y>")
+
+-- Select all
+map.set("n", "<C-a>", "gg<S-v>G")
 
 -- Move lines up/down
 map.set("n", "√", "<cmd>m .+1<cr>==", { desc = "Move down" })
