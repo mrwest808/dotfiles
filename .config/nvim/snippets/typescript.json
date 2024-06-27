@@ -10,5 +10,9 @@
   "console.error": {
     "prefix": "err",
     "body": "console.error($1)"
+  },
+  "export default": {
+    "prefix": "ed",
+    "body": "export default $1"
   }
 }

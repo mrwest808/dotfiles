@@ -109,6 +109,7 @@ return {
   },
   {
     "mrwest808/808.nvim",
+    -- dir = "~/dev/808.nvim",
     config = function()
       require("808").setup()
       vim.keymap.set("i", "<C-e>", "<cmd>ExpandTag<CR>")

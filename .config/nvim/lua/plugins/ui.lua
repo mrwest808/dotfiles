@@ -47,4 +47,17 @@ return {
     },
   },
   -- { "christoomey/vim-tmux-navigator" },
+  {
+    "stevearc/oil.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      keymaps = {
+        ["<BS>"] = "actions.parent",
+        ["q"] = "actions.close",
+      },
+    },
+    keys = {
+      { "-", "<Cmd>Oil<CR>", desc = "Open parent directory" },
+    },
+  },
 }
