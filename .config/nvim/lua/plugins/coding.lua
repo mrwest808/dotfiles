@@ -14,9 +14,6 @@ return {
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter-context",
-  },
-  {
     "L3MON4D3/LuaSnip",
     config = function()
       local ls = require("luasnip")
@@ -36,6 +33,14 @@ return {
     keys = function()
       return {}
     end,
+  },
+  -- Disable the tab-related snippet jumps
+  {
+    "nvim-cmp",
+    keys = {
+      { "<Tab>", mode = { "i", "s" }, false },
+      { "<S-Tab>", mode = { "i", "s" }, false },
+    },
   },
   {
     "folke/flash.nvim",
@@ -108,5 +113,8 @@ return {
       require("808").setup()
       vim.keymap.set("i", "<C-e>", "<cmd>ExpandTag<CR>")
     end,
+  },
+  {
+    "mg979/vim-visual-multi",
   },
 }

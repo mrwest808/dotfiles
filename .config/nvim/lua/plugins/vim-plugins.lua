@@ -1,4 +1,4 @@
 return {
-  "neo4j-contrib/cypher-vim-syntax",
-  ft = "cypher",
+  -- "neo4j-contrib/cypher-vim-syntax",
+  -- ft = "cypher",
 }

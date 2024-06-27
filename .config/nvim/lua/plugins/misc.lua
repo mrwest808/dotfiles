@@ -1,23 +1,29 @@
 local Util = require("lazyvim.util")
 
-local function is_git_repo()
-  vim.fn.system("git rev-parse --is-inside-work-tree")
-  return vim.v.shell_error == 0
-end
+local is_inside_work_tree = {}
+local work_tree_root = {}
 
 local function get_git_root()
   local dot_git_path = vim.fn.finddir(".git", ".;")
   return vim.fn.fnamemodify(dot_git_path, ":h")
 end
 
-local function get_find_files_opts()
-  local opts = {}
-  if is_git_repo() then
-    opts = {
-      cwd = get_git_root(),
-    }
+local function get_files_cwd()
+  local cwd = vim.fn.getcwd()
+
+  if is_inside_work_tree[cwd] == nil then
+    vim.fn.system("git rev-parse --is-inside-work-tree")
+
+    is_inside_work_tree[cwd] = vim.v.shell_error == 0
+
+    if is_inside_work_tree[cwd] then
+      work_tree_root[cwd] = get_git_root()
+    end
   end
-  return opts
+
+  if is_inside_work_tree[cwd] then
+    return work_tree_root[cwd]
+  end
 end
 
 return {
@@ -34,26 +40,27 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      -- { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-      -- {
-      --   "<C-p>",
-      --   function()
-      --     vim.fn.system("git rev-parse --is-inside-work-tree")
-      --     if vim.v.shell_error == 0 then
-      --       require("telescope.builtin").git_files()
-      --     else
-      --       require("telescope.builtin").find_files({
-      --         find_command = { "rg", "--files", "--hidden", "--glob", "!**/{.git,node_modules}/*" },
-      --       })
-      --     end
-      --   end,
-      --   desc = "Find Files",
-      -- },
       {
         "<C-p>",
-        Util.telescope("files", get_find_files_opts()),
+        Util.pick("auto", {
+          cwd = get_files_cwd(),
+          show_untracked = true,
+        }),
         desc = "Find Files",
       },
+    },
+  },
+  {
+    "CrispyDrone/vim-tasks",
+  },
+  {
+    "mistricky/codesnap.nvim",
+    build = "make",
+    opts = {
+      mac_window_bar = false,
+      code_font_family = "SFMono Nerd Font",
+      watermark = "",
+      min_width = 860,
     },
   },
 }
