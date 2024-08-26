@@ -1,0 +1,63 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-a h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-a l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-a k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-a j": ["workspace::ActivatePaneInDirection", "Down"]
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-a h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-a l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-a k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-a j": ["workspace::ActivatePaneInDirection", "Down"],
+      "H": "pane::ActivatePrevItem",
+      "L": "pane::ActivateNextItem",
+      "ctrl-d": ["workspace::SendKeystrokes", "5 ctrl-e"],
+      "ctrl-u": ["workspace::SendKeystrokes", "5 ctrl-y"],
+      "space e": "workspace::ToggleLeftDock",
+      "space |": "pane::SplitRight",
+      "space -": "pane::SplitDown",
+      "ctrl-a m": "workspace::ToggleZoom",
+      "ctrl-p": "file_finder::Toggle",
+      "space b b": "pane::CloseInactiveItems",
+      "space b d": "pane::CloseActiveItem",
+      "space c f": "editor::Fold",
+      "space c F": "editor::UnfoldLines"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "space y": "editor::Copy",
+      "alt-k": "editor::MoveLineUp",
+      "alt-j": "editor::MoveLineDown"
+    }
+  }
+]
