@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source $DIR/../bash_helpers
 
 mkdir -p $HOME/.config
@@ -11,8 +11,9 @@ ln -s $DIR/.tmux.conf $HOME/.tmux.conf
 ln -s $DIR/alacritty $HOME/.config/alacritty
 ln -s $DIR/nvim $HOME/.config/nvim
 
-mkdir -p $HOME/.config/zed
-_symlink $DIR/zed/keymap.json ~/.config/zed/keymap.json
-_symlink $DIR/zed/settings.json ~/.config/zed/settings.json
+# mkdir -p $HOME/.config/zed
+# _symlink $DIR/zed/keymap.json ~/.config/zed/keymap.json
+# _symlink $DIR/zed/settings.json ~/.config/zed/settings.json
+# ln -s $DIR/zed/snippets ~/.config/zed/snippets
 
 echo "Symlinked configuration files & directories"

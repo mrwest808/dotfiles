@@ -17,13 +17,12 @@
       "ctrl-a l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-a k": ["workspace::ActivatePaneInDirection", "Up"],
       "ctrl-a j": ["workspace::ActivatePaneInDirection", "Down"]
-      // "shift shift": "file_finder::Toggle"
     }
   },
   {
-    "context": "Editor",
+    "context": "ProjectPanel",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "space e": "workspace::ToggleLeftDock"
     }
   },
   {
@@ -41,7 +40,7 @@
       "L": "pane::ActivateNextItem",
       "ctrl-d": ["workspace::SendKeystrokes", "5 ctrl-e"],
       "ctrl-u": ["workspace::SendKeystrokes", "5 ctrl-y"],
-      "space e": "workspace::ToggleLeftDock",
+      "space e": "project_panel::ToggleFocus",
       "space |": "pane::SplitRight",
       "space -": "pane::SplitDown",
       "ctrl-a m": "workspace::ToggleZoom",
@@ -55,6 +54,10 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
       "space y": "editor::Copy",
       "alt-k": "editor::MoveLineUp",
       "alt-j": "editor::MoveLineDown"
