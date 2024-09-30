@@ -112,3 +112,68 @@ function tmx() {
     tmx:select
   fi
 }
+
+function t() {
+  CYAN="\033[0;36m"
+  NC='\033[0m'
+
+  input="$1"
+
+  # Get a list of sessions
+  active_sessions=("${(@f)$(tmux ls | awk -F: '{ print $1 }')}")
+
+  # Read filenames in ~/.tmux-templates
+  templates=()
+  for file in "$HOME/.tmux-templates"/*; do
+    if [[ -f "$file" ]]; then
+        templates+=($(basename "$file"))
+    fi
+  done
+
+  session=""
+
+  if [[ -z "$input" ]]; then
+    # Print each template and have user select one
+    echo "\nAvailable sessions:\n"
+    i=1
+    for template in $templates; do
+      # Check if this template is an active session
+      if [[ ${active_sessions[(r)$template]} == $template ]]; then
+        echo "  ${i}) ${template} ${CYAN}(active)${NC}"
+      else
+        echo "  ${i}) ${template}"
+      fi
+      ((i++))
+    done
+
+    echo -n "\nSelect a template: "
+    read -r selection
+
+    if [[ -z "$selection" ]]; then
+      return
+    fi
+
+    if ! [[ "$selection" =~ ^[0-9]+$ ]]; then
+      # Use fzf to perform fuzzy matching
+      session=$(printf '%s\n' "${templates[@]}" | fzf --filter="$selection" --no-sort)
+    else
+      session=${templates[$((selection))]}
+    fi
+  else
+    # Use fzf to perform fuzzy matching
+    session=$(printf '%s\n' "${templates[@]}" | fzf --filter="$input" --no-sort)
+  fi
+
+  if [[ -z "$session" ]]; then
+    echo "WARN: No session selected."
+    return
+  fi
+
+  tmux has-session -t $session 2>/dev/null
+
+  if [[ $? != 0 ]]; then
+    tmux new-session -d -s $session "zsh $HOME/.tmux-templates/$session"
+  fi
+
+  tmux attach-session -t $session
+}
