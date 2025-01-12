@@ -27,16 +27,6 @@ local function get_files_cwd()
 end
 
 return {
-  -- {
-  --   "williamboman/mason.nvim",
-  --   opts = {
-  --     ensure_installed = {
-  --       "prettierd",
-  --       "stylua",
-  --       "eslint_d",
-  --     },
-  --   },
-  -- },
   {
     "nvim-telescope/telescope.nvim",
     keys = {

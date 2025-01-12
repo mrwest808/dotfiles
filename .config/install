@@ -10,6 +10,7 @@ mkdir -p $HOME/.config
 ln -s $DIR/.tmux.conf $HOME/.tmux.conf
 ln -s $DIR/alacritty $HOME/.config/alacritty
 ln -s $DIR/nvim $HOME/.config/nvim
+ln -s $DIR/aerospace $HOME/.config/aerospace
 
 # mkdir -p $HOME/.config/zed
 # _symlink $DIR/zed/keymap.json ~/.config/zed/keymap.json

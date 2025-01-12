@@ -13,6 +13,20 @@
       "}"
     ]
   },
+  "react function component 2 (ts)": {
+    "prefix": "rfc2",
+    "body": [
+      "export function ${2:Comp}(${3:props}: ${2:Comp}.Props) {",
+      "  return ${4:null}",
+      "}",
+      "",
+      "export namespace ${2:Comp} {",
+      "  export interface Props {",
+      "    // ...",
+      "  }",
+      "}"
+    ]
+  },
   "console.log": {
     "prefix": "log",
     "body": "console.log($1)"
@@ -39,5 +53,9 @@
       "// prettier-ignore",
       "$2{const c=Array.from(formData.keys()).reduce((a,k)=>k.length>a?k.length:a,0);console.group('Submit');for(const[k,v]of Array.from(formData.entries())){const l=`${k.padStart(c)}:`;console.log(`%c${l}%c ${v}`,'color: #999; font-weight: bold');}console.groupEnd();}"
     ]
+  },
+  "pure annotation comment": {
+    "prefix": "purecomment",
+    "body": "/*#__PURE__*/"
   }
 }

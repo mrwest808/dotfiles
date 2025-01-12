@@ -10,6 +10,9 @@ return {
     },
   },
   {
+    "nyoom-engineering/oxocarbon.nvim",
+  },
+  {
     "akinsho/bufferline.nvim",
     -- Overriding <leader>bb in lua/config/keymaps.lua
     keys = {
@@ -38,14 +41,14 @@ return {
       },
     },
   },
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      render = "minimal",
-      stages = "static",
-      timeout = 2200,
-    },
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   opts = {
+  --     render = "minimal",
+  --     stages = "static",
+  --     timeout = 2200,
+  --   },
+  -- },
   -- { "christoomey/vim-tmux-navigator" },
   {
     "stevearc/oil.nvim",

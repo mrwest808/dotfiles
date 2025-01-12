@@ -26,13 +26,13 @@ map.del({ "i", "n", "v" }, "<M-j>")
 map.set({ "n", "v" }, "<leader>y", '"*y', { desc = "Yank to system clipboard" })
 map.set({ "n", "v" }, "<leader>p", '"*p', { desc = "Paste from system clipboard" })
 
--- Binds the raw output of alt+space to open cmp completion panel
--- I've mapped ctrl+space to match that output in Alacritty
-local cmp_present, cmp = pcall(require, "cmp")
-if cmp_present then
-  map.set("i", " ", cmp.mapping.complete()) -- alt+space
-  map.set("i", "<C-c>", cmp.mapping.complete()) -- alt+space
-end
+-- -- Binds the raw output of alt+space to open cmp completion panel
+-- -- I've mapped ctrl+space to match that output in Alacritty
+-- local cmp_present, cmp = pcall(require, "cmp")
+-- if cmp_present then
+--   map.set("i", " ", cmp.mapping.complete()) -- alt+space
+--   map.set("i", "<C-c>", cmp.mapping.complete()) -- alt+space
+-- end
 
 --
 -- Plugin mappings that I haven't been able to override in ../plugins

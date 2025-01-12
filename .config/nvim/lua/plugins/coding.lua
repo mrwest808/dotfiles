@@ -53,9 +53,9 @@ return {
       },
     },
   },
-  {
-    "jiangmiao/auto-pairs",
-  },
+  -- {
+  --   "jiangmiao/auto-pairs",
+  -- },
   {
     "junegunn/vim-easy-align",
   },

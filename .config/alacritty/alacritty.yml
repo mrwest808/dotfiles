@@ -760,6 +760,8 @@ alt_send_esc: false
 # in the order they were defined in.
 key_bindings:
   - { key: Space, mods: Control, chars: "\u00A0" }
+  - { key: H, mods: Command, action: "None" }
+  - { key: H, mods: Command|Alt, action: "None" }
 #   - { key: J,        mods: Alt,     chars: "\x1bj"                       }
 #   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
 #   - { key: H,        mods: Alt,     chars: "\x1bh"                       }
