@@ -1,44 +1,20 @@
 {
-  "name": "nvim-snippets",
+  "name": "personal-snippets",
   "contributes": {
     "snippets": [
-      {
-        "language": [
-          "all"
-        ],
-        "path": "./all.json"
-      },
-      {
-        "language": [
-          "lua"
-        ],
-        "path": "./lua.json"
-      },
       {
         "language": [
           "javascript",
           "typescript",
           "typescriptreact"
         ],
-        "path": "./typescriptreact.json"
+        "path": "./ts.json"
       },
       {
         "language": [
-          "json"
+          "markdown"
         ],
-        "path": "./json.json"
-      },
-      {
-        "language": [
-          "html"
-        ],
-        "path": "./html.json"
-      },
-      {
-        "language": [
-          "svelte"
-        ],
-        "path": "./svelte.json"
+        "path": "./markdown.json"
       }
     ]
   }

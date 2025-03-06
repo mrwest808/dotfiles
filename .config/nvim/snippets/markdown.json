@@ -1,0 +1,6 @@
+{
+  "breaking changes heading": {
+    "prefix": "#break",
+    "body": ["#### ⚠️ BREAKING CHANGES"]
+  }
+}

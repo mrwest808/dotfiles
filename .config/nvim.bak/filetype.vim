@@ -1,5 +1,4 @@
 augroup filetypedetect
-  au! BufRead,BufNewFile ~/.config/ghostty/config  setfiletype dosini
   au! BufRead,BufNewFile *.postcss  setfiletype css
   au! BufRead,BufNewFile *.db  setfiletype cypher
   au! BufRead,BufNewFile *.mdx  setfiletype markdown
@@ -12,4 +11,3 @@ augroup tasks
   au Filetype tasks silent! nmap <buffer> <leader>tt <Plug>(TasksToggleAndClearTask)
   au Filetype tasks silent! nmap <buffer> <leader>td <Plug>(TasksCompleteTask)
 augroup END
-

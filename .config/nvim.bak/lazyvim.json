@@ -1,0 +1,10 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.lang.go",
+    "lazyvim.plugins.extras.linting.eslint"
+  ],
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 7
+}

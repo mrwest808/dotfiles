@@ -1,0 +1,16 @@
+{
+  "react function component w/ namespace": {
+    "prefix": "rfcn",
+    "body": [
+      "export function ${1:Comp}(${2:props}: ${1:Comp}.Props) {",
+      "  return ${3:null}",
+      "}",
+      "",
+      "export namespace ${1:Comp} {",
+      "  export interface Props {",
+      "    // ...",
+      "  }",
+      "}"
+    ]
+  }
+}
