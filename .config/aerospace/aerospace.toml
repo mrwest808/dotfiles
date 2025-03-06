@@ -217,6 +217,14 @@ if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
+if.app-id = 'com.microsoft.VSCodeInsiders'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = ['layout floating', 'move-node-to-workspace S']
 
