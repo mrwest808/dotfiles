@@ -3,7 +3,12 @@ return {
     "mrwest808/808.nvim",
     config = function()
       require("808").setup()
-      vim.keymap.set("i", "<C-e>", "<cmd>ExpandTag<CR>")
+      vim.keymap.set("i", "<C-e>", function()
+        -- Emmet-like tag expansion
+        require("808.commands").expand_tag()
+        -- Make sure to close autocomplete menu
+        require("blink.cmp").hide()
+      end)
     end,
   },
   {
