@@ -146,15 +146,17 @@ function t() {
       ((i++))
     done
 
+    echo "\nOther sessions:\n"
+
     # TODO: Add other active sessions
-    # for session in $active_sessions; do
-    #   if [[ ${templates[(r)$session]} == $session ]]; then
-    #     # Do nothing...
-    #   else
-    #     echo "  ${i}) ${session}"
-    #   fi
-    #   ((i++))
-    # done
+    for session in $active_sessions; do
+      if [[ ${templates[(r)$session]} == $session ]]; then
+        # Do nothing...
+      else
+        echo "  ${i}) ${session} ${CYAN}(active)${NC}"
+        ((i++))
+      fi
+    done
 
     echo -n "\nSelect a template: "
     read -r selection
@@ -165,13 +167,13 @@ function t() {
 
     if ! [[ "$selection" =~ ^[0-9]+$ ]]; then
       # Use fzf to perform fuzzy matching
-      session=$(printf '%s\n' "${templates[@]}" | fzf --filter="$selection" --no-sort)
+      session=$(printf '%s\n' "${active_sessions[@]}" | fzf --filter="$selection" --no-sort)
     else
-      session=${templates[$((selection))]}
+      session=${active_sessions[$((selection))]}
     fi
   else
     # Use fzf to perform fuzzy matching
-    session=$(printf '%s\n' "${templates[@]}" | fzf --filter="$input" --no-sort)
+    session=$(printf '%s\n' "${active_sessions[@]}" | fzf --filter="$input" --no-sort)
   fi
 
   if [[ -z "$session" ]]; then
