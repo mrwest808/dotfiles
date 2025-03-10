@@ -130,13 +130,29 @@ function t() {
     fi
   done
 
-  session=""
+  template_sessions=()
+  other_sessions=()
+  attachable_sessions=()
+
+  for template in $templates; do
+    template_sessions+=($template)
+    attachable_sessions+=($template)
+  done
+
+  for session in $active_sessions; do
+    if [[ ${templates[(r)$session]} == $session ]]; then
+      # We have already dealt with templates
+    else
+      other_sessions+=($session)
+      attachable_sessions+=($session)
+    fi
+  done
 
   if [[ -z "$input" ]]; then
     # Print each template and have user select one
     echo "\nAvailable sessions:\n"
     i=1
-    for template in $templates; do
+    for template in $template_sessions; do
       # Check if this template is an active session
       if [[ ${active_sessions[(r)$template]} == $template ]]; then
         echo "  ${i}) ${template} ${CYAN}(active)${NC}"
@@ -146,17 +162,14 @@ function t() {
       ((i++))
     done
 
-    echo "\nOther sessions:\n"
+    if [[ ${#other_sessions[@]} -gt 0 ]]; then
+      echo "\nOther sessions:\n"
 
-    # TODO: Add other active sessions
-    for session in $active_sessions; do
-      if [[ ${templates[(r)$session]} == $session ]]; then
-        # Do nothing...
-      else
+      for session in $other_sessions; do
         echo "  ${i}) ${session} ${CYAN}(active)${NC}"
         ((i++))
-      fi
-    done
+      done
+    fi
 
     echo -n "\nSelect a template: "
     read -r selection
@@ -165,15 +178,17 @@ function t() {
       return
     fi
 
+    session=""
+
     if ! [[ "$selection" =~ ^[0-9]+$ ]]; then
       # Use fzf to perform fuzzy matching
-      session=$(printf '%s\n' "${active_sessions[@]}" | fzf --filter="$selection" --no-sort)
+      session=$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$selection" --no-sort)
     else
-      session=${active_sessions[$((selection))]}
+      session=${attachable_sessions[$((selection))]}
     fi
   else
     # Use fzf to perform fuzzy matching
-    session=$(printf '%s\n' "${active_sessions[@]}" | fzf --filter="$input" --no-sort)
+    session=$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$input" --no-sort)
   fi
 
   if [[ -z "$session" ]]; then
