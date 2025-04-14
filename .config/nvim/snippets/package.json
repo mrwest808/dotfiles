@@ -15,6 +15,18 @@
           "markdown"
         ],
         "path": "./markdown.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./go.json"
+      },
+      {
+        "language": [
+          "svelte"
+        ],
+        "path": "./svelte.json"
       }
     ]
   }

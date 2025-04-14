@@ -1,0 +1,6 @@
+{
+  "script lang ts": {
+    "prefix": "scriptt",
+    "body": ["<script lang=\"ts\">", "  $1", "</script>"]
+  }
+}
