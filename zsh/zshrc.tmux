@@ -182,13 +182,83 @@ function t() {
 
     if ! [[ "$selection" =~ ^[0-9]+$ ]]; then
       # Use fzf to perform fuzzy matching
-      session=$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$selection" --no-sort)
+      matched_sessions=(${(f)"$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$selection" --no-sort)"})
+      
+      # If we have exactly one match, use it directly
+      if [[ ${#matched_sessions[@]} -eq 1 ]]; then
+        session=${matched_sessions[1]}
+      # If we have multiple matches, let the user choose
+      elif [[ ${#matched_sessions[@]} -gt 1 ]]; then
+        echo "\nMultiple sessions match '$selection':\n"
+        i=1
+        for match in $matched_sessions; do
+          # Check if this is an active session
+          if [[ ${active_sessions[(r)$match]} == $match ]]; then
+            echo "  ${i}) ${match} ${CYAN}(active)${NC}"
+          else
+            echo "  ${i}) ${match}"
+          fi
+          ((i++))
+        done
+        
+        echo -n "\nSelect a session: "
+        read -r match_selection
+        
+        if [[ -z "$match_selection" ]]; then
+          return
+        fi
+        
+        if [[ "$match_selection" =~ ^[0-9]+$ ]] && [[ $match_selection -ge 1 ]] && [[ $match_selection -le ${#matched_sessions[@]} ]]; then
+          session=${matched_sessions[$match_selection]}
+        else
+          echo "Invalid selection"
+          return
+        fi
+      else
+        # No matches
+        session=""
+      fi
     else
       session=${attachable_sessions[$((selection))]}
     fi
   else
     # Use fzf to perform fuzzy matching
-    session=$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$input" --no-sort)
+    matched_sessions=(${(f)"$(printf '%s\n' "${attachable_sessions[@]}" | fzf --filter="$input" --no-sort)"})
+    
+    # If we have exactly one match, use it directly
+    if [[ ${#matched_sessions[@]} -eq 1 ]]; then
+      session=${matched_sessions[1]}
+    # If we have multiple matches, let the user choose
+    elif [[ ${#matched_sessions[@]} -gt 1 ]]; then
+      echo "\nMultiple sessions match '$input':\n"
+      i=1
+      for match in $matched_sessions; do
+        # Check if this is an active session
+        if [[ ${active_sessions[(r)$match]} == $match ]]; then
+          echo "  ${i}) ${match} ${CYAN}(active)${NC}"
+        else
+          echo "  ${i}) ${match}"
+        fi
+        ((i++))
+      done
+      
+      echo -n "\nSelect a session: "
+      read -r match_selection
+      
+      if [[ -z "$match_selection" ]]; then
+        return
+      fi
+      
+      if [[ "$match_selection" =~ ^[0-9]+$ ]] && [[ $match_selection -ge 1 ]] && [[ $match_selection -le ${#matched_sessions[@]} ]]; then
+        session=${matched_sessions[$match_selection]}
+      else
+        echo "Invalid selection"
+        return
+      fi
+    else
+      # No matches
+      session=""
+    fi
   fi
 
   if [[ -z "$session" ]]; then
