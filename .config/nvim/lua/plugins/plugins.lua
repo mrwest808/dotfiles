@@ -27,4 +27,20 @@ return {
   {
     "mg979/vim-visual-multi",
   },
+  {
+    "nvzone/typr",
+    dependencies = "nvzone/volt",
+    opts = {},
+    cmd = { "Typr", "TyprStats" },
+  },
+  {
+    "derektata/lorem.nvim",
+    config = function()
+      require("lorem").opts({
+        sentence_length = "medium",
+        comma_chance = 0.2,
+        max_commas = 2,
+      })
+    end,
+  },
 }

@@ -4,3 +4,10 @@
 
 vim.opt.clipboard = ""
 vim.g.snacks_animate = false
+
+-- vim.diagnostic.config({
+--   virtual_text = false,
+--   signs = true,
+--   underline = true,
+--   update_in_insert = false,
+-- })

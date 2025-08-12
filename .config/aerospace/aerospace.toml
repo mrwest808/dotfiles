@@ -21,7 +21,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 12
+accordion-padding = 24
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -217,7 +217,7 @@ if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCodeInsiders'
+if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
@@ -226,7 +226,7 @@ run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = ['layout floating', 'move-node-to-workspace S']
+run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
 check-further-callbacks = false
