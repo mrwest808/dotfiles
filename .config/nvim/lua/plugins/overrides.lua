@@ -67,6 +67,9 @@ return {
       local cwd_string_length = string.len(display_cwd)
       local padding_length = max_string_length - cwd_string_length - version_string_length
 
+      vim.api.nvim_set_hl(0, "DashDim", { fg = "#838BB7" })
+      vim.api.nvim_set_hl(0, "DashNormal", { fg = "#C0CAF4" })
+
       local logo = {
         -- SAME COLOR LOGO
         -- {
@@ -80,54 +83,71 @@ return {
         -- DIFFERENT COLOR LOGO
         {
           [[
-            █▀▀▄ █▀▀█ █▀▀█ █▀▀ ]],
-          hl = "Comment",
+  █▀▀▄ █▀▀█ █▀▀█ █▀▀ ]],
+          hl = "DashDim",
         },
         {
           [[█▀▀ █▀▀█ █▀▀▄ █▀▀
-          ]],
-          hl = "Info",
+]],
+          hl = "DashNormal",
         },
         {
           [[  █░░█ █░░█ █░░█ █▀▀ ]],
-          hl = "Comment",
+          hl = "DashDim",
         },
         {
           [[█░░ █░░█ █░░█ █▀▀
-          ]],
-          hl = "Info",
+]],
+          hl = "DashNormal",
         },
         {
           [[  ▀  ▀ ▀▀▀▀ █▀▀▀ ▀▀▀ ]],
-          hl = "Comment",
+          hl = "DashDim",
         },
         {
           [[▀▀▀ ▀▀▀▀ ▀▀▀  ▀▀▀
           ]],
-          hl = "Info",
+          hl = "DashNormal",
         },
         {
           "  " .. display_cwd .. string.rep(" ", padding_length) .. version_text .. [[
           ]],
-          hl = "Comment",
+          hl = "DashDim",
         },
       }
 
+      opts.dashboard.width = 36
       opts.dashboard.preset.header = logo
       opts.dashboard.preset.keys = {
-        { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-        { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
-        { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
-        { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
-        {
-          icon = " ",
-          key = "c",
-          desc = "Config",
-          action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-        },
+        { key = "n", desc = "new file", action = ":ene | startinsert" },
+        { key = "f", desc = "find file", action = ":lua Snacks.dashboard.pick('files')" },
+        { key = "g", desc = "find text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+        { key = "r", desc = "recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+        -- {
+        --   key = "c",
+        --   desc = "config",
+        --   action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+        -- },
         -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-        -- { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
-        { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        { key = "l", desc = "lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+        { key = "q", desc = "quit", action = ":qa" },
+      }
+      opts.dashboard.formats = {
+        keys = { "%s", align = "center" },
+        key = function(item)
+          return { item.key, hl = "DashDim" }
+        end,
+        icon = function(item)
+          return { item.icon, hl = "DashNormal" }
+        end,
+        desc = function(item)
+          return { item.desc, hl = "Normal" }
+        end,
+      }
+      opts.dashboard.sections = {
+        { section = "header", align = "center" },
+        { section = "keys", gap = 0, padding = 8, indent = 2 },
+        -- { text = { "neovim btw", hl = "file" }, align = "center" },
       }
     end,
   },
