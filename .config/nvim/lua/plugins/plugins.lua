@@ -43,4 +43,20 @@ return {
       })
     end,
   },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    build = ":Copilot auth",
+    event = "BufReadPost",
+    opts = {
+      panel = {
+        enabled = false,
+        auto_refresh = false,
+      },
+      suggestion = {
+        enabled = false,
+        auto_trigger = false,
+      },
+    },
+  },
 }

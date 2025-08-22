@@ -43,3 +43,19 @@ local Snacks = require("snacks")
 
 map.set("n", "<C-p>", LazyVim.pick("files", { cwd = LazyVim.root.get(), show_untracked = true }))
 map.set("n", "<S-Esc>", Snacks.zen.zoom)
+
+-- [copilot.lua]
+
+map.set("i", "<M-Right>", function()
+  require("copilot.suggestion").next()
+  -- Make sure to close autocomplete menu
+  require("blink.cmp").hide()
+end)
+map.set("i", "<M-Left>", function()
+  require("copilot.suggestion").prev()
+  -- Make sure to close autocomplete menu
+  require("blink.cmp").hide()
+end)
+map.set("i", "<M-Enter>", function()
+  require("copilot.suggestion").accept()
+end)
