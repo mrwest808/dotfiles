@@ -121,14 +121,14 @@ return {
       opts.dashboard.preset.keys = {
         { key = "n", desc = "new file", action = ":ene | startinsert" },
         { key = "f", desc = "find file", action = ":lua Snacks.dashboard.pick('files')" },
-        { key = "g", desc = "find text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+        -- { key = "g", desc = "find text", action = ":lua Snacks.dashboard.pick('live_grep')" },
         { key = "r", desc = "recent files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
         -- {
         --   key = "c",
         --   desc = "config",
         --   action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
         -- },
-        -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+        { key = "s", desc = "restore session", section = "session" },
         { key = "l", desc = "lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
         { key = "q", desc = "quit", action = ":qa" },
       }

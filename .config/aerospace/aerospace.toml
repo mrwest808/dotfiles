@@ -138,6 +138,7 @@ ctrl-s = 'mode motion'
 ctrl-m = 'mode motion'
 alt-space = 'mode motion'
 alt-a = 'mode motion'
+ctrl-space = 'mode motion'
 
 [mode.motion.binding]
 esc = ['mode main']
